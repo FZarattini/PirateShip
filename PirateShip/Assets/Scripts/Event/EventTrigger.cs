@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class EventTrigger : MonoBehaviour
 {
     GameController game;
+    private bool eventReady;
+    public bool automatic;
 
     [System.Serializable]
     public class Event
@@ -22,14 +24,16 @@ public class EventTrigger : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        game = FindObjectOfType<GameController>();
+        //game = FindObjectOfType<GameController>();
+        eventReady = false;
         //_singleTrigger = singleTrigger;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        Debug.Log(automatic);
+        if ( eventReady == true && Input.GetKeyDown(KeyCode.E))
         {
             if (singleTrigger && _hasTriggered)
                 return;
@@ -37,13 +41,38 @@ public class EventTrigger : MonoBehaviour
             _hasTriggered = true;
             StartCoroutine(RunEventSequence());
         }
+        
+
     }
 
-    /*private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (automatic == true)
+        {
+            if (singleTrigger && _hasTriggered)
+                return;
+
+            _hasTriggered = true;
+            StartCoroutine(RunEventSequence());
+        }
+        else
+        {
+            eventReady = true;
+            
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        eventReady = false;
+    }
+
+    public void runEvent()
     {
         
-    }*/
 
+
+    }
     private IEnumerator RunEventSequence()
     {
         foreach (Event eve in eventSequence)

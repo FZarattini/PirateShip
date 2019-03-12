@@ -15,16 +15,17 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+        Debug.Log(talking);
     }
 
     private void Update()
     {
-        if (talking == true)
+
+        if (talking && Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                DisplayNextSentence();
-            }
+
+            DisplayNextSentence();
+
         }
     }
 
@@ -41,13 +42,13 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-       
+
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+        if (sentences.Count == 0)
         {
             EndDialogue();
             return;
@@ -63,5 +64,5 @@ public class DialogueManager : MonoBehaviour
         dialogueCanvas.SetActive(false);
         Debug.Log("fim de conversa");
     }
-    
+
 }
