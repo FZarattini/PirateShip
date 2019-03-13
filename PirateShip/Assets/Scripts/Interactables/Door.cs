@@ -22,7 +22,7 @@ public class Door : MonoBehaviour
         
     }
 
-    public void openDoors()
+    public void OpenDoors()
     {
 
         anim.Play(animationName);
