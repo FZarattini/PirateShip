@@ -3,6 +3,7 @@
 public class ItemPickup : Interactable
 {
     public Item item;
+    private bool pickedUp;
 
     public override void Interact()
     {
@@ -13,8 +14,12 @@ public class ItemPickup : Interactable
 
     void PickUp()
     {
+        pickedUp = Inventory.instance.Add(item);
+        if (pickedUp)
+        {
+            Destroy(gameObject);
 
-        Destroy(gameObject);
+        }
     }
 
     private void Update()

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.GetComponent<ItemPickup>() != null)
         {
@@ -33,6 +33,23 @@ public class PlayerController : MonoBehaviour
         {
             collision.gameObject.GetComponent<ItemPickup>().canInteract = false;
         }
+    }*/
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<ItemPickup>() != null)
+        {
+            collision.gameObject.GetComponent<ItemPickup>().canInteract = true;
+
+        }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<ItemPickup>() != null)
+        {
+            collision.gameObject.GetComponent<ItemPickup>().canInteract = false;
+        }
+    }
 }
