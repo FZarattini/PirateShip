@@ -18,12 +18,20 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
+    public Transform itemsParent;
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
-    public int space = 10;
+    ItemSlot[] slots;
+
+    public int space;
 
     public List<Item> items = new List<Item>();
+
+    private void Start()
+    {
+        slots = itemsParent.GetComponentsInChildren<ItemSlot>();
+    }
 
     public bool Add(Item item)
     {
@@ -34,7 +42,9 @@ public class Inventory : MonoBehaviour
                 Debug.Log("Not enough space!");
                 return false;
             }
+
             items.Add(item);
+
             if (onItemChangedCallback != null)
             {
                 onItemChangedCallback.Invoke();
@@ -43,6 +53,24 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
+    public void RemoveSelectedItems()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].selected)
+            {
+                items.Remove(slots[i].item);
+                slots[i].selected = false;
+            }
+        }
+
+        if (onItemChangedCallback != null)
+        {
+            onItemChangedCallback.Invoke();
+        }
+
+    }
+    /*
     public void Remove(Item item)
     {
         items.Remove(item);
@@ -50,5 +78,5 @@ public class Inventory : MonoBehaviour
         {
             onItemChangedCallback.Invoke();
         }
-    }
+    }*/
 }

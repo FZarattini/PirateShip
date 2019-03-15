@@ -24,7 +24,7 @@ public class ItemPickup : Interactable
 
     private void Update()
     {
-        Debug.Log("pode interagir" + canInteract);
+
         if (Input.GetKeyDown(KeyCode.E) && canInteract == true)
         {
             Interact();

@@ -32,7 +32,7 @@ public class EventTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(automatic);
+
         if ( eventReady == true && Input.GetKeyDown(KeyCode.E))
         {
             if (singleTrigger && _hasTriggered)

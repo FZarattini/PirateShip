@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
-        Debug.Log(talking);
+
     }
 
     private void Update()
