@@ -3,37 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{ 
-    
+{
+    public Canvas inventory;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.GetComponent<ItemPickup>() != null)
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            collision.gameObject.GetComponent<ItemPickup>().canInteract = true;
-            
+            toggleInventory();
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void toggleInventory()
     {
-        if(collision.gameObject.GetComponent<ItemPickup>() != null)
+        if (!inventory.isActiveAndEnabled)
         {
-            collision.gameObject.GetComponent<ItemPickup>().canInteract = false;
+        inventory.gameObject.SetActive(true);
+
         }
-    }*/
+        else
+        {
+            inventory.gameObject.SetActive(false);
+        }
+
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)

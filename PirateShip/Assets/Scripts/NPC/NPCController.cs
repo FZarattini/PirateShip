@@ -11,7 +11,7 @@ public class NPCController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetPos = new Vector3(0f, target.transform.position.y, 0f);
+        targetPos = new Vector3(target.transform.position.x, 0f, 0f);
     }
 
     // Update is called once per frame
@@ -22,7 +22,14 @@ public class NPCController : MonoBehaviour
 
     public void LookAt(GameObject target)
     {
-        transform.right = targetPos - transform.position;
+        if(target.transform.position.x - transform.position.x > 0)
+        {
+            transform.right = new Vector3(targetPos.x - transform.position.x, 0f, 0f);
+        }
+        else
+        {
+            transform.right = new Vector3(transform.position.x - targetPos.x, 0f, 0f);
+        }
     }
 
 }
