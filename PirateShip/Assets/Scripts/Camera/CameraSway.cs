@@ -7,6 +7,7 @@ public class CameraSway : MonoBehaviour
 {
     public CinemachineVirtualCamera vcam;
     bool goUp;
+    bool right;
     public float upSwayLimit;
     public float downSwayLimit;
     public float swayFactor;
@@ -14,6 +15,7 @@ public class CameraSway : MonoBehaviour
     private void Start()
     {
         goUp = true;
+        right = true;
     }
 
     // Update is called once per frame
@@ -22,28 +24,24 @@ public class CameraSway : MonoBehaviour
 
         if (goUp)
         {
-            upSway();
+            UpSway();
         }
         else
         {
-            downSway();
+            DownSway();
         }
 
-        /*if (vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y >= 0.6)
+        if (right)
         {
-            Debug.Log("deveria descer!");
-            downSway();
+            RotateRight();
         }
-
-        if(vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y <= 0.6)
+        else
         {
-            Debug.Log("Deveria subir!");
-            upSway();
-        }*/
-
+            RotateLeft();
+        }
     }
 
-    private void upSway()
+    private void UpSway()
     {
         vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y += 0.1f * Time.deltaTime * swayFactor;
         if(vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y >= upSwayLimit)
@@ -52,7 +50,7 @@ public class CameraSway : MonoBehaviour
         }
     }
 
-    private void downSway()
+    private void DownSway()
     {
         vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y -= 0.1f * Time.deltaTime * swayFactor;
         if(vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y <= downSwayLimit)
@@ -60,4 +58,24 @@ public class CameraSway : MonoBehaviour
             goUp = true;
         }
     }
+
+    private void RotateRight()
+    {
+        transform.Rotate(0f, 0f, 0.001f);
+        if(transform.rotation.z >= 0.006f)
+        {
+            right = false;
+        }
+    }
+
+    private void RotateLeft()
+    {
+        transform.Rotate(0f,0f, -0.001f);
+        if(transform.rotation.z <= -0.006f)
+        {
+            right = true;
+        }
+    }
+
+
 }

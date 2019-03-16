@@ -61,6 +61,7 @@ public class Inventory : MonoBehaviour
             {
                 items.Remove(slots[i].item);
                 slots[i].selected = false;
+                slots[i].empty = true;
             }
         }
 

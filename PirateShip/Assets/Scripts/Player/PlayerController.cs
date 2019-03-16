@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Canvas inventory;
+    public Canvas inventoryCanvas;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -23,14 +24,15 @@ public class PlayerController : MonoBehaviour
 
     private void toggleInventory()
     {
-        if (!inventory.isActiveAndEnabled)
+        if (!inventoryCanvas.isActiveAndEnabled)
         {
-        inventory.gameObject.SetActive(true);
-
+            inventoryCanvas.gameObject.SetActive(true);
+     
+            inventoryCanvas.GetComponent<InventoryUI>().UpdateUI();
         }
         else
         {
-            inventory.gameObject.SetActive(false);
+            inventoryCanvas.gameObject.SetActive(false);
         }
 
     }

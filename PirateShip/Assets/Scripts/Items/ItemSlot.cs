@@ -9,7 +9,7 @@ public class ItemSlot : MonoBehaviour
     public bool selected;
     public bool empty;
 
-    private void Start()
+    private void Awake()
     {
         selected = false;
         empty = true;

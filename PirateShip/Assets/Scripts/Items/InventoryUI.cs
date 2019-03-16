@@ -6,12 +6,11 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
     public Transform itemsParent;
-    public Image removeButton;
     Inventory inventory;
     ItemSlot[] slots;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;
@@ -24,7 +23,7 @@ public class InventoryUI : MonoBehaviour
         
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         for(int i = 0; i < slots.Length; i++)
         {
