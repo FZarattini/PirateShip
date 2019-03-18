@@ -19,18 +19,32 @@ public class Inventory : MonoBehaviour
     #endregion
 
     public Transform itemsParent;
+    public Transform hierarchy;
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
+    public Transform playerTransform;
+    public GameObject prefab;
+    
+
+    private GameObject instantiated;
+    private int index;
 
     ItemSlot[] slots;
 
     public int space;
 
+    public List<GameObject> prefabs = new List<GameObject>();
     public List<Item> items = new List<Item>();
 
     private void Start()
     {
         slots = itemsParent.GetComponentsInChildren<ItemSlot>();
+
+    }
+
+    private void Update()
+    {
+        
     }
 
     public bool Add(Item item)
@@ -53,6 +67,30 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
+    public void DropSelectedItems()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].selected)
+            {
+                //index = items.IndexOf(slots[i].item);
+                prefab = prefabs.Find(x => x.name.Equals(slots[i].item.name));
+                instantiated = Instantiate(prefab, playerTransform.position, Quaternion.identity);
+                instantiated.transform.SetParent(hierarchy);
+                
+                items.Remove(slots[i].item);
+                slots[i].selected = false;
+                slots[i].empty = true;
+            }
+        }
+
+        if (onItemChangedCallback != null)
+        {
+            onItemChangedCallback.Invoke();
+        }
+
+    }
+
     public void RemoveSelectedItems()
     {
         for (int i = 0; i < slots.Length; i++)
@@ -69,7 +107,6 @@ public class Inventory : MonoBehaviour
         {
             onItemChangedCallback.Invoke();
         }
-
     }
     /*
     public void Remove(Item item)
