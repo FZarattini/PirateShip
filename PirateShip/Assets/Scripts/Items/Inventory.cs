@@ -6,9 +6,12 @@ public class Inventory : MonoBehaviour
 {
     #region Singleton
     public static Inventory instance;
+    public Transform itemsParent;
 
     private void Awake()
     {
+        slots = itemsParent.GetComponentsInChildren<ItemSlot>();
+
         if (instance != null)
         {
             Debug.Log("Duas instancias de inventario geradas!");
@@ -18,7 +21,6 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
-    public Transform itemsParent;
     public Transform hierarchy;
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
@@ -38,7 +40,7 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        slots = itemsParent.GetComponentsInChildren<ItemSlot>();
+        
 
     }
 
