@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        slots = itemsParent.GetComponentsInChildren<ItemSlot>();
+        //itemsParent = GameObject.Find("itemsParent").GetComponent<Transform>();
 
         if (instance != null)
         {
@@ -40,13 +40,19 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        
+        slots = itemsParent.GetComponentsInChildren<ItemSlot>();
 
     }
 
     private void Update()
     {
-        
+        if(playerTransform == null){
+            playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        }
+        if(hierarchy == null)
+        {
+            hierarchy = GameObject.FindGameObjectWithTag("Items").GetComponent<Transform>();
+        }
     }
 
     public bool Add(Item item)

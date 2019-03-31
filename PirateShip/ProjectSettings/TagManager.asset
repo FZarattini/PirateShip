@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - NPC
+  - Inventory
+  - Dialogue
+  - ItemsParent
+  - Items
   layers:
   - Default
   - TransparentFX
