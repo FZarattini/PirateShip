@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    private bool open = false;
     public string animationName;
     public Animator anim;
     

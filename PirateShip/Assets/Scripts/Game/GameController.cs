@@ -6,13 +6,15 @@ public class GameController : MonoBehaviour
 {
 
     public PlayerController player;
+    public SpawnManager sm;
     public Canvas inventoryCanvas;
+    public int spawnID;
 
     // Start is called before the first frame update
     void Awake()
     {
-        player = FindObjectOfType<PlayerController>();
-        
+        //player = FindObjectOfType<PlayerController>();
+        //sp = FindObjectOfType<SpawnPoints>();
     }
 
     // Update is called once per frame
@@ -38,5 +40,23 @@ public class GameController : MonoBehaviour
         }
 
     }
+
+    public void SetSpawnID(int id)
+    {
+        spawnID = id;
+    }
+
+    private void SpawnPlayer()
+    {
+        player.transform.position = sm.spawnPoints[spawnID].position;
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        player = FindObjectOfType<PlayerController>();
+        sm = FindObjectOfType<SpawnManager>();
+        SpawnPlayer();
+    }
+
 
 }
