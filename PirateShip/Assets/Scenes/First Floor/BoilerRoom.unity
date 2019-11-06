@@ -5904,6 +5904,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: '--------Managers---------'
       objectReference: {fileID: 0}
+    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 277319900}
+    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
+        type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 921124457}
+    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
+        type: 3}
+      propertyPath: dialogueCanvas
+      value: 
+      objectReference: {fileID: 197816217}
     - target: {fileID: 2459733687134223660, guid: 49337bd108157544884fcffe94b0d232,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5959,21 +5974,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
-        type: 3}
-      propertyPath: nameText
-      value: 
-      objectReference: {fileID: 277319900}
-    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
-        type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 921124457}
-    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
-        type: 3}
-      propertyPath: dialogueCanvas
-      value: 
-      objectReference: {fileID: 197816217}
     - target: {fileID: 1580528465685918387, guid: 49337bd108157544884fcffe94b0d232,
         type: 3}
       propertyPath: sp
