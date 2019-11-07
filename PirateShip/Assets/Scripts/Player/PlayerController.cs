@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-   
+    public Personality personality;
 
     // Start is called before the first frame update
     void Start()
