@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    /////////////////////////////////////////////////
+    ///On game start - Implement later
+    public GameObject playerPrefab;
+    public Transform playerParent;
+    /////////////////////////////////////////////////
 
     public PlayerController player;
     public SpawnManager sm;
     public Canvas inventoryCanvas;
     public int spawnID;
+    public NPCController[] npcList;
 
     // Start is called before the first frame update
     void Awake()
     {
-
+        //player = Instantiate(playerPrefab, playerParent).gameObject.GetComponent<PlayerController
+        InitializeNPCs();
     }
 
     // Update is called once per frame
@@ -22,6 +29,14 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             toggleInventory();
+        }
+    }
+
+    private void InitializeNPCs()
+    {
+        foreach(NPCController n in npcList)
+        {
+            n.empathy.CalculateBaseEmpathy(player.personality, n.personality);
         }
     }
 
@@ -56,6 +71,5 @@ public class GameController : MonoBehaviour
         sm = FindObjectOfType<SpawnManager>();
         SpawnPlayer();
     }
-
 
 }

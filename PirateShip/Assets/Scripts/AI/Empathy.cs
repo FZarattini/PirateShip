@@ -11,10 +11,12 @@ public enum EmpathyEnum
     hateful
 };
 
-public class Empathy : MonoBehaviour
+public class Empathy: MonoBehaviour
 {
 
     public EmpathyEnum empathy;
+    private Personality npcPersonality;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +30,10 @@ public class Empathy : MonoBehaviour
         
     }
 
-    private void CalculateEmpathy()
+    public void CalculateBaseEmpathy(Personality npcPersonality, Personality playerPersonality)
     {
-
+        //Relações entre personalidades retornando uma empatia do enumerador
+        return;
     }
 
 }

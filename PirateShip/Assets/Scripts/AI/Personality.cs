@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Personality : MonoBehaviour
+public class Personality
 {
     static int qtdEmocoes = 4;
     static int qtdPersonalidades = 5;
