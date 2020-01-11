@@ -6,25 +6,29 @@ public class NPCController : MonoBehaviour
 {
     public Personality personality;
     public Empathy empathy;
-    public GameObject target;
+    public Transform target;
     private Vector3 targetPos;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         empathy = new Empathy();
-        targetPos = new Vector3(target.transform.position.x, 0f, 0f);
+        if(target)
+        {
+            targetPos = new Vector3(target.position.x, 0f, 0f);
+        }
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        LookAt(target);
+        if(target)
+            LookAt(target);
     }
 
-    public void LookAt(GameObject target)
+    public void LookAt(Transform target)
     {
-        if(target.transform.position.x - transform.position.x > 0)
+        if(target.position.x - transform.position.x > 0)
         {
             transform.right = new Vector3(targetPos.x - transform.position.x, 0f, 0f);
         }
