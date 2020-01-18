@@ -495,7 +495,9 @@ PlayerSettings:
   webGLCompressionFormat: 1
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: USE_PHYSICS2D
+    7: USE_PHYSICS2D
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}

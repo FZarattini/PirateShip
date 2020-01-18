@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
+    bool freeze = false;
+    
     
 
     // Start is called before the first frame update
@@ -41,5 +43,10 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
         
+    }
+
+    public void Freeze()
+    {
+        controller.FreezeMovement();
     }
 }
