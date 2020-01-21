@@ -11,12 +11,17 @@ public class TimelineManager : MonoBehaviour
     public RuntimeAnimatorController playerAnim;
     public PlayableDirector director;
 
+    private void Start()
+    {
+        playerMov.enabled = false;
+    }
+
     // Start is called before the first frame update
     void OnEnable()
     {
         playerAnim = playerAnimator.runtimeAnimatorController;
-        playerAnimator.runtimeAnimatorController = null;
-        playerMov.enabled = false;
+        //playerAnimator.runtimeAnimatorController = null;
+        //playerMov.enabled = false;
     }
 
     // Update is called once per frame
@@ -26,6 +31,7 @@ public class TimelineManager : MonoBehaviour
         {
             fix = true;
             playerMov.enabled = true;
+            playerAnimator.runtimeAnimatorController = null;
             playerAnimator.runtimeAnimatorController = playerAnim;
         }
     }

@@ -5155,6 +5155,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2337640872698173425, guid: 74b43ff76896d2c4cbc75955c2f503c1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.8680677
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337640874207593267, guid: 74b43ff76896d2c4cbc75955c2f503c1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.8680677
+      objectReference: {fileID: 0}
     - target: {fileID: 2337640874207593266, guid: 74b43ff76896d2c4cbc75955c2f503c1,
         type: 3}
       propertyPath: m_Follow
@@ -5185,21 +5195,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: '--------Managers---------'
       objectReference: {fileID: 0}
-    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
-        type: 3}
-      propertyPath: nameText
-      value: 
-      objectReference: {fileID: 277319900}
-    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
-        type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 921124457}
-    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
-        type: 3}
-      propertyPath: dialogueCanvas
-      value: 
-      objectReference: {fileID: 197816217}
     - target: {fileID: 1266538997616853019, guid: 49337bd108157544884fcffe94b0d232,
         type: 3}
       propertyPath: spawnPoints.Array.size
@@ -5215,6 +5210,21 @@ PrefabInstance:
       propertyPath: spawnPoints.Array.data[1]
       value: 
       objectReference: {fileID: 903631404}
+    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 277319900}
+    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
+        type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 921124457}
+    - target: {fileID: 2459733688204484904, guid: 49337bd108157544884fcffe94b0d232,
+        type: 3}
+      propertyPath: dialogueCanvas
+      value: 
+      objectReference: {fileID: 197816217}
     - target: {fileID: 2459733687134223660, guid: 49337bd108157544884fcffe94b0d232,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5456,6 +5466,16 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2056728470}
+    - target: {fileID: 4419074474131120486, guid: e9e5ccb04d211794f8bf45aa8d3f6382,
+        type: 3}
+      propertyPath: conversationActor
+      value: 
+      objectReference: {fileID: 2056728470}
+    - target: {fileID: 4419074474131120486, guid: e9e5ccb04d211794f8bf45aa8d3f6382,
+        type: 3}
+      propertyPath: conversationConversant
+      value: 
+      objectReference: {fileID: 1534376888}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9e5ccb04d211794f8bf45aa8d3f6382, type: 3}
 --- !u!1001 &4942977680229504947
@@ -5482,7 +5502,7 @@ PrefabInstance:
     - target: {fileID: 4942977679249160229, guid: 09cc24bd8a371ef4b83bdf1af35dac0a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.04
+      value: -2.991
       objectReference: {fileID: 0}
     - target: {fileID: 4942977679249160229, guid: 09cc24bd8a371ef4b83bdf1af35dac0a,
         type: 3}
