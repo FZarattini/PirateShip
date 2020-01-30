@@ -805,7 +805,7 @@ PrefabInstance:
     - target: {fileID: 4134611765865499640, guid: 49337bd108157544884fcffe94b0d232,
         type: 3}
       propertyPath: displaySettings.subtitleSettings.continueButton
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49337bd108157544884fcffe94b0d232, type: 3}
@@ -929,6 +929,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1599239065, guid: 09cc24bd8a371ef4b83bdf1af35dac0a, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599239065, guid: 09cc24bd8a371ef4b83bdf1af35dac0a, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599239065, guid: 09cc24bd8a371ef4b83bdf1af35dac0a, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599239065, guid: 09cc24bd8a371ef4b83bdf1af35dac0a, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09cc24bd8a371ef4b83bdf1af35dac0a, type: 3}
 --- !u!4 &1599239062 stripped
@@ -1018,6 +1034,7 @@ PlayableDirector:
     value: {fileID: 1964818454}
   m_ExposedReferences:
     m_References:
+    - 089b4078343a431429aa4606b8343e94: {fileID: 2014433708}
     - d077a068e1b9ac047831345ba5a08e86: {fileID: 1964818456}
     - cf9ecb21e13ef9c4187cf30c7155c5a7: {fileID: 1964818456}
     - 1906351658cc3644da3e27cefa8371c8: {fileID: 1964818456}
