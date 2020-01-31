@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact()
     {
-        Debug.Log("Picking Up");
+        //Debug.Log("Picking Up");
     }
 
     private void Update()
