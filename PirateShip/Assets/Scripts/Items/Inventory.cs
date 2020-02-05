@@ -57,15 +57,33 @@ public class Inventory : MonoBehaviour
 
     public bool Add(Item item)
     {
+        int index;
         if (!item.isDefaultItem)
         {
-            if (items.Count >= space)
+            if (items.Contains(item))
+            {
+                index = items.IndexOf(item);
+                Debug.Log("INDEX " + index);
+                slots[index].quantity++;
+
+                if (onItemChangedCallback != null)
+                {
+                    onItemChangedCallback.Invoke();
+                }
+
+                return true;
+            }
+
+            if (items.Count >= space && item)
             {
                 Debug.Log("Not enough space!");
                 return false;
             }
 
             items.Add(item);
+            index = items.IndexOf(item);
+            slots[index].quantity++;
+
 
             if (onItemChangedCallback != null)
             {
@@ -85,10 +103,19 @@ public class Inventory : MonoBehaviour
                 prefab = prefabs.Find(x => x.name.Equals(slots[i].item.name));
                 instantiated = Instantiate(prefab, playerTransform.position, Quaternion.identity);
                 instantiated.transform.SetParent(hierarchy);
-                
-                items.Remove(slots[i].item);
+               
                 slots[i].selected = false;
-                slots[i].empty = true;
+
+                if (slots[i].quantity > 1)
+                {
+                    slots[i].quantity -= 1;
+                }
+                else
+                {
+                    items.Remove(slots[i].item);
+                    slots[i].quantity = 0;
+                    slots[i].empty = true;
+                }
             }
         }
 

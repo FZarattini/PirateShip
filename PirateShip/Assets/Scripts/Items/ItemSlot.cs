@@ -6,6 +6,7 @@ public class ItemSlot : MonoBehaviour
 
     public Image icon;
     public Item item;
+    public float quantity = 0;
     public bool selected;
     public bool empty;
 
