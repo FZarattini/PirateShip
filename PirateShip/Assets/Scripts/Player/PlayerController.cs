@@ -32,6 +32,13 @@ public class PlayerController : MonoBehaviour
             //gameObject.GetComponent<PlayerMovement>().onLadder = true;
             gameObject.GetComponent<CharacterController2D>().SetOnLadder(true);    
         }
+
+        if(collision.gameObject.tag == "Carriable")
+        {
+            collision.gameObject.GetComponent<Carriable>().SetPlayer(gameObject.transform);
+            collision.gameObject.GetComponent<Carriable>().SetCanEquip(true);
+                      
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -44,6 +51,12 @@ public class PlayerController : MonoBehaviour
         {
             //gameObject.GetComponent<PlayerMovement>().onLadder = false;
             gameObject.GetComponent<CharacterController2D>().SetOnLadder(false);
+        }
+
+        if (collision.gameObject.tag == "Carriable")
+        {
+            collision.gameObject.GetComponent<Carriable>().SetCanEquip(false);
+
         }
     }
 }

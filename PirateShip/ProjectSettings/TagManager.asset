@@ -10,6 +10,7 @@ TagManager:
   - ItemsParent
   - Items
   - Ladder
+  - Carriable
   layers:
   - Default
   - TransparentFX
