@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
         {
             collision.gameObject.GetComponent<ItemPickup>().canInteract = true;
         }
+
+        if(collision.gameObject.tag == "Ladder")
+        {
+            //gameObject.GetComponent<PlayerMovement>().onLadder = true;
+            gameObject.GetComponent<CharacterController2D>().SetOnLadder(true);    
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -33,6 +39,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.GetComponent<ItemPickup>() != null)
         {
             collision.gameObject.GetComponent<ItemPickup>().canInteract = false;
+        }
+        if(collision.gameObject.tag == "Ladder")
+        {
+            //gameObject.GetComponent<PlayerMovement>().onLadder = false;
+            gameObject.GetComponent<CharacterController2D>().SetOnLadder(false);
         }
     }
 }

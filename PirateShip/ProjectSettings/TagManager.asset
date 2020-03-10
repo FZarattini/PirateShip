@@ -9,6 +9,7 @@ TagManager:
   - Dialogue
   - ItemsParent
   - Items
+  - Ladder
   layers:
   - Default
   - TransparentFX

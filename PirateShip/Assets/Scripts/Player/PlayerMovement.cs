@@ -7,9 +7,14 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public float runSpeed = 40f;
     float horizontalMove = 0f;
+    float verticalMove = 0f;
     bool jump = false;
     bool crouch = false;
+    public bool climb = false;
+    public bool descend = false;
     bool freeze = false;
+    public bool onLadder = false;
+    
     
     
 
@@ -23,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        verticalMove = Input.GetAxisRaw("Vertical") * runSpeed;
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -40,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, verticalMove * Time.fixedDeltaTime, crouch, jump, climb, descend);
         jump = false;
         
     }

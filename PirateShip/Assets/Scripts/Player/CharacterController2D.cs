@@ -11,6 +11,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
     [SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
+    [SerializeField] private bool m_OnLadder = false;
 
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;            // Whether or not the player is grounded.
@@ -18,6 +19,7 @@ public class CharacterController2D : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
+    float originalGravity;
 
     [Header("Events")]
     [Space]
@@ -30,9 +32,11 @@ public class CharacterController2D : MonoBehaviour
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
 
+
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        originalGravity = m_Rigidbody2D.gravityScale;
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
@@ -60,8 +64,7 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
-
-    public void Move(float move, bool crouch, bool jump)
+    public void Move(float horizontalMove, float verticalMove, bool crouch, bool jump, bool climb, bool descend)
     {
         // If crouching, check to see if the character can stand up
         if (!crouch)
@@ -87,7 +90,7 @@ public class CharacterController2D : MonoBehaviour
                 }
 
                 // Reduce the speed by the crouchSpeed multiplier
-                move *= m_CrouchSpeed;
+                horizontalMove *= m_CrouchSpeed;
 
                 // Disable one of the colliders when crouching
                 if (m_CrouchDisableCollider != null)
@@ -107,23 +110,44 @@ public class CharacterController2D : MonoBehaviour
             }
 
             // Move the character by finding the target velocity
-            Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+            Vector3 targetVelocity = new Vector2(horizontalMove * 10f, m_Rigidbody2D.velocity.y);
             // And then smoothing it out and applying it to the character
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
             // If the input is moving the player right and the player is facing left...
-            if (move > 0 && !m_FacingRight)
+            if (horizontalMove > 0 && !m_FacingRight)
             {
                 // ... flip the player.
                 Flip();
             }
             // Otherwise if the input is moving the player left and the player is facing right...
-            else if (move < 0 && m_FacingRight)
+            else if (horizontalMove < 0 && m_FacingRight)
             {
                 // ... flip the player.
                 Flip();
             }
         }
+
+        if (m_OnLadder)
+        {
+            if (verticalMove == 0f)
+            {
+                m_Rigidbody2D.gravityScale = 0f;
+            }
+            else
+            {
+                m_Rigidbody2D.gravityScale = originalGravity;
+            }
+            // Move the character by finding the target velocity
+            Vector3 targetVelocity = new Vector2(m_Rigidbody2D.velocity.x, verticalMove * 10f);
+            // And then smoothing it out and applying it to the character
+            m_Rigidbody2D.velocity = targetVelocity;
+        }
+        else
+        {
+            m_Rigidbody2D.gravityScale = originalGravity;
+        }
+
         // If the player should jump...
         if (m_Grounded && jump)
         {
@@ -149,4 +173,10 @@ public class CharacterController2D : MonoBehaviour
     {
         m_Rigidbody2D.velocity = Vector3.zero;
     }
+
+    public void SetOnLadder(bool value)
+    {
+        m_OnLadder = value;
+    }
+
 }
