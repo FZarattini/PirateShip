@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class Area : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Openness.onVisit += DeleteArea;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void DeleteArea()
     {
         Object.Destroy(this.gameObject);
@@ -26,6 +14,7 @@ public class Area : MonoBehaviour
         if(collision.tag == "Player")
         {
             Openness.RegisterVisit();
+            DeleteArea();
         }
     }
 }

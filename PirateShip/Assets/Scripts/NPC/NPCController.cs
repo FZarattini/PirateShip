@@ -8,6 +8,7 @@ public class NPCController : MonoBehaviour
     public Empathy empathy;
     public Transform target;
     private Vector3 targetPos;
+    public bool interacted = false;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -35,6 +36,14 @@ public class NPCController : MonoBehaviour
         else
         {
             transform.right = new Vector3(transform.position.x - targetPos.x, 0f, 0f);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+        {
+            interacted = true;
         }
     }
 

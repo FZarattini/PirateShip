@@ -24,13 +24,17 @@ public class Openness : MonoBehaviour
     public delegate void OnAreaVisited();
     public static event OnAreaVisited onVisit;
 
+    public delegate void OnNPCInteracted();
+    public static event OnNPCInteracted onNPC;
+
     public PlayerController player;
     public Inventory inventory;
-    public GameObject mineCart;
-    public GameObject lever;
 
     public int maxAreas;
-    int visitedAreas = 0;
+    [SerializeField]int visitedAreas = 0;
+
+    public int maxNPCs;
+    [SerializeField]int interactedNPCs;
 
     private void Awake()
     {
@@ -41,7 +45,7 @@ public class Openness : MonoBehaviour
     void Start()
     {
         onVisit += IncrementArea;
-
+        onNPC += IncrementNPC;
     }
 
     // Update is called once per frame
@@ -55,9 +59,19 @@ public class Openness : MonoBehaviour
         onVisit();
     }
 
+    public static void RegisterNPC()
+    {
+        onNPC();
+    }
+
     void IncrementArea()
     {
         visitedAreas += 1;
+    }
+
+    void IncrementNPC()
+    {
+        interactedNPCs += 1;
     }
 
     public void ProcessVisitedAreas()
@@ -65,11 +79,8 @@ public class Openness : MonoBehaviour
 
     }
 
-    #region Puzzle
-    public void MoveCart()
+    public void ProcessInteractedNPCs()
     {
-        mineCart.transform.Translate(new Vector3(3f, 0f, 0f));
-        lever.transform.localScale = new Vector3(lever.transform.localScale.x * (-1), lever.transform.localScale.y, lever.transform.localScale.z);
+
     }
-    #endregion
 }
