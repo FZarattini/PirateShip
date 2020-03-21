@@ -143,13 +143,14 @@ public class Inventory : MonoBehaviour
             onItemChangedCallback.Invoke();
         }
     }
-    /*
+
     public void Remove(Item item)
     {
+
         items.Remove(item);
         if (onItemChangedCallback != null)
         {
             onItemChangedCallback.Invoke();
         }
-    }*/
+    }
 }

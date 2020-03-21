@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Shiny
   icon: {fileID: 21300000, guid: d20d603f36272044c8f77f80b5e7d8a2, type: 3}
   isDefaultItem: 0
+  isNecessary: 1

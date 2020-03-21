@@ -65,8 +65,9 @@
     <Compile Include="Assets\Scripts\AI\Empathy.cs" />
     <Compile Include="Assets\Scripts\AI\Personality.cs" />
     <Compile Include="Assets\Scripts\AI\Trackers\Area.cs" />
-    <Compile Include="Assets\Scripts\AI\Trackers\InteractedNPCs.cs" />
-    <Compile Include="Assets\Scripts\AI\Trackers\Openness.cs" />
+    <Compile Include="Assets\Scripts\AI\Trackers\Traits\Agreeableness.cs" />
+    <Compile Include="Assets\Scripts\AI\Trackers\Traits\Extraversion.cs" />
+    <Compile Include="Assets\Scripts\AI\Trackers\Traits\Openness.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraSway.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
@@ -94,6 +95,9 @@
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Puzzles\CartPuzzle.cs" />
+    <Compile Include="Assets\Scripts\Quests\Generator.cs" />
+    <Compile Include="Assets\Scripts\Quests\GrandfathersWatch.cs" />
+    <Compile Include="Assets\Scripts\Quests\Quest.cs" />
     <Compile Include="Assets\Scripts\Sequencer\SequencerCommandPlayer.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Users/felip/Desktop/ICAD/PirateShip/PirateShip/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>

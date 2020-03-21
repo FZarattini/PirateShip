@@ -23,27 +23,30 @@ public class NPCController : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        if(target)
-            LookAt(target);
+
     }
 
     public void LookAt(Transform target)
     {
-        if(target.position.x - transform.position.x > 0)
+
+        if(target.position.x - transform.position.x > 0 && transform.localScale.x > 0)
         {
-            transform.right = new Vector3(targetPos.x - transform.position.x, 0f, 0f);
+            //transform.right = new Vector3(targetPos.x - transform.position.x, 0f, 0f);          
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
-        else
+        else if(target.position.x - transform.position.x < 0 && transform.localScale.x < 0)
         {
-            transform.right = new Vector3(transform.position.x - targetPos.x, 0f, 0f);
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+        if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
             interacted = true;
+            if (target)
+                LookAt(target);
         }
     }
 

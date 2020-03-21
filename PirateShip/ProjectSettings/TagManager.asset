@@ -11,6 +11,7 @@ TagManager:
   - Items
   - Ladder
   - Carriable
+  - Quest
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Item
   - ItemChildLayer
   - Clamp
-  - 
+  - Quest
   - 
   - 
   - 

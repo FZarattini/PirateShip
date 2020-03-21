@@ -13,7 +13,7 @@ public class Area : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            Openness.RegisterVisit();
+            GameController.CheckVisitedArea();
             DeleteArea();
         }
     }
