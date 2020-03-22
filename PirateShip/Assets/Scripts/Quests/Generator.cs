@@ -32,6 +32,7 @@ public class Generator : Quest
             }
 
             completed = true;
+            DialogueLua.SetVariable("GeneratorQuestCompleted", true);
         }
     }
 }

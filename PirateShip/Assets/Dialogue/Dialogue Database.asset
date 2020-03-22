@@ -1452,7 +1452,7 @@ MonoBehaviour:
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
-      conditionsString: (Variable["WatchQuestAccepted"] == false) and (Variable["GeneratorQuestCompleted"]
+      conditionsString: (Variable["GeneratorQuestAccepted"] == false) and (Variable["GeneratorQuestCompleted"]
         == false)
       userScript: 
       onExecute:
@@ -1731,7 +1731,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: WaitForMessage(Continue)
+        value: 
         type: 0
         typeString: 
       conversationID: 4
@@ -1749,7 +1749,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["WatchQuestAccepted"] = true
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1802,7 +1802,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: WaitForMessage(Continue)
+        value: 
         type: 0
         typeString: 
       conversationID: 4
@@ -1879,7 +1879,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["GeneratorQuestAccepted"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2021,8 +2021,8 @@ MonoBehaviour:
         y: 139.27274
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.82000005
+    canvasScrollPosition: {x: 4.4776, y: 0}
+    canvasZoom: 0.6700001
   - id: 5
     fields:
     - title: Title

@@ -6068,7 +6068,6 @@ MonoBehaviour:
   completed: 0
   inventory: {fileID: 556849125}
   watch: {fileID: 11400000, guid: 1d409711a6d58a249b7b25f33878473f, type: 2}
-  delivered: 0
 --- !u!4 &517424382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2011882260285395495, guid: 9bfb46479f6f6d54e8eb47f6381d4ab4,
@@ -17432,7 +17431,7 @@ GameObject:
   - component: {fileID: 1405653635}
   - component: {fileID: 1405653634}
   - component: {fileID: 1405653637}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
