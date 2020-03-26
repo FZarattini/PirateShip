@@ -40,7 +40,6 @@ public class Openness : MonoBehaviour
     void Start()
     {
         onVisit += IncrementArea;
-
     }
 
     public static void RegisterVisit()

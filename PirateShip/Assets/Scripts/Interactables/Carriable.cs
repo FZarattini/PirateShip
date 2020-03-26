@@ -8,6 +8,7 @@ public class Carriable : MonoBehaviour
     [SerializeField]private bool canEquip = false;
     [SerializeField] private bool equipped = false;
     public Vector3 offset;
+    public Collider2D ignoredCollider;
     private Rigidbody2D rb;
 
 
@@ -32,11 +33,13 @@ public class Carriable : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic;
         gameObject.transform.parent = player;
         transform.position = player.position + offset;
+        ignoredCollider.enabled = false;
     }
 
     public void Unequip()
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
+        ignoredCollider.enabled = true;
     }
 
     public void SetCanEquip(bool value)
