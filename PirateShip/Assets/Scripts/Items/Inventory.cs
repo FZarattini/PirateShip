@@ -21,7 +21,7 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
-    public Transform hierarchy;
+    public Transform sceneItems;
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
     public Transform playerTransform;
@@ -31,7 +31,7 @@ public class Inventory : MonoBehaviour
     private GameObject instantiated;
     private int index;
 
-    ItemSlot[] slots;
+    public ItemSlot[] slots;
 
     public int space;
 
@@ -49,9 +49,9 @@ public class Inventory : MonoBehaviour
         if(playerTransform == null){
             playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         }
-        if(hierarchy == null)
+        if(sceneItems == null)
         {
-            hierarchy = GameObject.FindGameObjectWithTag("Items").GetComponent<Transform>();
+            sceneItems = GameObject.FindGameObjectWithTag("Items").GetComponent<Transform>();
         }
     }
 
@@ -102,7 +102,7 @@ public class Inventory : MonoBehaviour
                 //index = items.IndexOf(slots[i].item);
                 prefab = prefabs.Find(x => x.name.Equals(slots[i].item.name));
                 instantiated = Instantiate(prefab, playerTransform.position, Quaternion.identity);
-                instantiated.transform.SetParent(hierarchy);
+                instantiated.transform.SetParent(sceneItems);
                
                 slots[i].selected = false;
 

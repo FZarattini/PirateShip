@@ -15,19 +15,21 @@ public class GrandfathersWatch : Quest
         base.Update();
         // If player collected the watch 
 
+        if (DialogueLua.GetVariable("WatchQuestAccepted").AsBool == true){
+            accepted = true;
+        }
+
         if (inventory.items.Contains(watch))
         {
             DialogueLua.SetVariable("HasWatch", true);
         }
 
-
         // If watch is delivered = Quest completed
-        if((DialogueLua.GetVariable("WatchDelivered").AsBool) == true)
+        if((DialogueLua.GetVariable("WatchDelivered").AsBool) == true && completed == false)
         {
-            Debug.Log("VAI REMOVER!");
             inventory.Remove(watch);
             DialogueLua.SetVariable("HasWatch", false);
-            DialogueLua.SetVariable("WatchDelivered", true);
+            //DialogueLua.SetVariable("WatchDelivered", true);
             completed = true;
         }
     }

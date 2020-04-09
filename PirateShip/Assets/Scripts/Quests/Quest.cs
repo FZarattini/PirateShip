@@ -7,6 +7,7 @@ public class Quest : MonoBehaviour
 
     public bool accepted = false;
     public bool completed = false;
+    public bool isMainQuest;
 
     // Start is called before the first frame update
     public virtual void Start()
