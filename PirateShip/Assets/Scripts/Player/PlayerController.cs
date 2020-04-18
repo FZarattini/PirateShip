@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public Personality personality;    
+    public Personality personality;
+    public static bool canTeleport {get; set;}
 
     // Start is called before the first frame update
     void Start()
     {
-    
+
     }
 
     // Update is called once per frame
@@ -19,6 +20,15 @@ public class PlayerController : MonoBehaviour
      
     }
 
+    public void TeleportPlayer(Transform destination)
+    {
+        if(canTeleport == true)
+        {
+            gameObject.transform.position = destination.position;
+        }
+        canTeleport = false;
+        
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,6 +46,7 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag == "Carriable")
         {
             collision.gameObject.GetComponent<Carriable>().SetPlayer(gameObject.transform);
+            collision.gameObject.GetComponent<Carriable>().SetCanEquip(true);
             collision.gameObject.GetComponent<Carriable>().SetCanEquip(true);
                       
         }
@@ -59,4 +70,6 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+
 }

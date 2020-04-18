@@ -7,6 +7,9 @@ public class Quest : MonoBehaviour
 
     public bool accepted = false;
     public bool completed = false;
+    public bool rejected = false;
+    public bool failed = false;
+
     public bool isMainQuest;
 
     // Start is called before the first frame update

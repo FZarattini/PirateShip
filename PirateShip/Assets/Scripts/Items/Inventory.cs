@@ -57,6 +57,7 @@ public class Inventory : MonoBehaviour
 
     public bool Add(Item item)
     {
+
         int index;
         if (!item.isDefaultItem)
         {

@@ -6,11 +6,23 @@ public class DoorTrigger : MonoBehaviour
 {
     public Door door;
     public bool locked;
+    public bool interacted = false;
 
     // Start is called before the first frame update
-    public void TriggerDoor()
+    public void TriggerDoor(string animationName)
     {
         if(locked == false)
-            door.OpenDoors();
-    }   
+        {
+            Debug.Log("Pode teleportar");
+            PlayerController.canTeleport = true;
+            Debug.Log("Abrindo portas!");
+            door.OpenDoors(animationName);
+            interacted = true;
+        }
+    }
+    
+    public void EndDoorAction(string animationName)
+    {
+        door.CloseDoors(animationName);
+    }
 }

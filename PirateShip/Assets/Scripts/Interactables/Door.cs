@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public string animationName;
+    //public string animationName;
     public Animator anim;
     
     // Start is called before the first frame update
@@ -20,9 +20,16 @@ public class Door : MonoBehaviour
         
     }
 
-    public void OpenDoors()
+    public void OpenDoors(string animationName)
     {
+        Debug.Log("ABRINDO!!");
+        anim.Play(animationName);      
+        
+    }
 
+    public void CloseDoors(string animationName)
+    {
+        Debug.Log("FECHANDO!!");
         anim.Play(animationName);
     }
 }

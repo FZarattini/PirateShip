@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
     {
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Quest"))
         {
-            npcList.Add(obj.GetComponent<NPCController>());
+            questList.Add(obj.GetComponent<Quest>());
         }
     }
 
@@ -169,7 +169,7 @@ public class GameController : MonoBehaviour
             if (quest.completed == true)
             {
                 if (scene.name == "Tracker1")
-                    Agreeableness.RegisterCompletedQuest();
+                    Conscientiousness.RegisterCompletedQuest();
             }
         }
     }

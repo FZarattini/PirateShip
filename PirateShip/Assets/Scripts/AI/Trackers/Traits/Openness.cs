@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 public class Openness : MonoBehaviour
 {
@@ -30,6 +31,11 @@ public class Openness : MonoBehaviour
 
     public int maxAreas;
     [SerializeField]int visitedAreas = 0;
+    
+    public float finalValue;
+
+    public float assignedValue;
+    public float assignedReverseValue;
 
     private void Awake()
     {
@@ -42,6 +48,10 @@ public class Openness : MonoBehaviour
         onVisit += IncrementArea;
     }
 
+    private void Update()
+    {
+    }
+
     public static void RegisterVisit()
     {
         onVisit();
@@ -52,8 +62,24 @@ public class Openness : MonoBehaviour
         visitedAreas += 1;
     }
 
-    public void ProcessVisitedAreas()
+    public float ProcessVisitedAreas()
     {
         //Cálculo de porcentagem de áreas visitadas
+
+        return (visitedAreas) / maxAreas;
+    }
+
+    public void AssignOpenness()
+    {
+        //Recupera a pontuação e a pontuação reversa
+        assignedValue = DialogueLua.GetVariable("OpennessValue").AsFloat;
+        assignedReverseValue = 6 - DialogueLua.GetVariable("OpennessReversedValue").AsFloat;
+        
+        //Média entre a pontuação e a pontuação reversa
+        float mean = (assignedValue + assignedReverseValue) / 2.0f;
+        //Normaliza o valor
+        float normalizedValue = (mean - 1) / 4.0f;
+
+        player.personality.personality[0] = normalizedValue;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 public class Agreeableness : MonoBehaviour
 {
@@ -25,12 +26,13 @@ public class Agreeableness : MonoBehaviour
     public delegate void OnQuestAccepted();
     public static event OnQuestAccepted onAcceptQuest;
 
-    public delegate void OnQuestCompleted();
-    public static event OnQuestCompleted onCompleteQuest;
+    public PlayerController player;
 
     public int maxQuests;
     [SerializeField] int activeQuests = 0;
-    [SerializeField] int completedQuests = 0;
+
+    public float assignedValue;
+    public float assignedReverseValue;
 
     private void Awake()
     {
@@ -41,7 +43,6 @@ public class Agreeableness : MonoBehaviour
     void Start()
     {
         onAcceptQuest += IncrementActiveQuests;
-        onCompleteQuest += IncrementCompletedQuests;
     }
 
     // Update is called once per frame
@@ -55,18 +56,23 @@ public class Agreeableness : MonoBehaviour
         onAcceptQuest();
     }
 
-    public static void RegisterCompletedQuest()
-    {
-        onCompleteQuest();
-    }
-
     void IncrementActiveQuests()
     {
         activeQuests += 1;
     }
 
-    void IncrementCompletedQuests()
+
+    public void AssignAgreeableness()
     {
-        completedQuests += 1;
+        //Recupera a pontuação e a pontuação reversa
+        assignedValue = DialogueLua.GetVariable("AgreeablenessValue").AsFloat;
+        assignedReverseValue = 6 - DialogueLua.GetVariable("AgreeablenessReversedValue").AsFloat;
+
+        //Média entre a pontuação e a pontuação reversa
+        float mean = (assignedValue + assignedReverseValue) / 2.0f;
+        //Normaliza o valor
+        float normalizedValue = (mean - 1) / 4.0f;
+
+        player.personality.personality[3] = normalizedValue;
     }
 }
