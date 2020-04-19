@@ -29,10 +29,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8352336200652328090}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.13, y: -5.32828, z: 21.816624}
   m_LocalScale: {x: 4.9267197, y: 4.74675, z: 4.74675}
-  m_Children: []
+  m_Children:
+  - {fileID: 5289615731276841720}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -176,7 +177,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: 
+  conversation: Villager1 Son Quest Convo
   conversationConversant: {fileID: 8352336200652328089}
   conversationActor: {fileID: 0}
   startConversationEntryID: -1
@@ -237,4 +238,87 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   empathy: {fileID: 0}
   target: {fileID: 0}
+  questGiver: 0
+  questSign: {fileID: 8999682842572834013}
   interacted: 0
+--- !u!1001 &692308302310692445
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8352336200652328089}
+    m_Modifications:
+    - target: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466443387131859584, guid: 296ad30328499d4468dfd7edd0968258,
+        type: 3}
+      propertyPath: m_Name
+      value: MainQuestSign
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 296ad30328499d4468dfd7edd0968258, type: 3}
+--- !u!1 &8999682842572834013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8466443387131859584, guid: 296ad30328499d4468dfd7edd0968258,
+    type: 3}
+  m_PrefabInstance: {fileID: 692308302310692445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5289615731276841720 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4680348049025488037, guid: 296ad30328499d4468dfd7edd0968258,
+    type: 3}
+  m_PrefabInstance: {fileID: 692308302310692445}
+  m_PrefabAsset: {fileID: 0}

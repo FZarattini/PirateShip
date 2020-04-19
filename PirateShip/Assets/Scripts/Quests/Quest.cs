@@ -9,6 +9,7 @@ public class Quest : MonoBehaviour
     public bool completed = false;
     public bool rejected = false;
     public bool failed = false;
+    public NPCController giver;
 
     public bool isMainQuest;
 
@@ -21,6 +22,15 @@ public class Quest : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-
+        if (completed)
+        {
+            giver.OnQuestCompleted();
+        }else if (failed)
+        {
+            giver.OnQuestFailed();
+        }else if (accepted)
+        {
+            giver.OnQuestAccepted();
+        }
     }
 }

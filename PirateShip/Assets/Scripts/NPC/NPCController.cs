@@ -4,26 +4,54 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
+    private Vector3 targetPos;
+
     public Personality personality;
     public Empathy empathy;
     public Transform target;
-    private Vector3 targetPos;
+
+    public bool questGiver;
+
+    public GameObject questSign;
+
     public bool interacted = false;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         empathy = new Empathy();
+
         if(target)
         {
             targetPos = new Vector3(target.position.x, 0f, 0f);
         }
+
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
+        
+    }
 
+    public void OnQuestAccepted()
+    {
+
+        questSign.GetComponent<QuestSign>().AcceptQuest();
+
+    }
+
+    public void OnQuestCompleted()
+    {
+        //questSign.GetComponent<QuestSign>().CompleteQuest();
+        questSign.SetActive(false);
+    }
+
+    public void OnQuestFailed()
+    {
+
+        //questSign.GetComponent<QuestSign>().FailQuest();
+        questSign.SetActive(false);
     }
 
     public void LookAt(Transform target)

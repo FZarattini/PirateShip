@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\Quests\Guitar.cs" />
     <Compile Include="Assets\Scripts\Quests\MainQuest_Bundles.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestSign\QuestSign.cs" />
     <Compile Include="Assets\Scripts\Quests\RebelTeenager.cs" />
     <Compile Include="Assets\Scripts\Sequencer\SequencerCommandPlayer.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">

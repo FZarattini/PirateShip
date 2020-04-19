@@ -20,7 +20,6 @@ public class Guitar : Quest
         base.Update();
 
         // If player collected the Guitar
-
         if (dt.interacted == true)
         {
             inventory.Remove(key);

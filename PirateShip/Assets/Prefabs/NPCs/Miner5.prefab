@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2105454629109943688}
   - component: {fileID: 2105454629109943689}
   - component: {fileID: 2105454629109943694}
+  - component: {fileID: 1078805193}
   m_Layer: 11
   m_Name: Miner5
   m_TagString: NPC
@@ -29,10 +30,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105454629109943692}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.45, y: -25.17, z: 0}
-  m_LocalScale: {x: -4.926722, y: 4.74675, z: 4.74675}
-  m_Children: []
+  m_LocalScale: {x: 4.926722, y: 4.74675, z: 4.74675}
+  m_Children:
+  - {fileID: 6873623533847143387}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -177,7 +179,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: Miner5 Convo
+  conversation: Miner5 Guitar Convo
   conversationConversant: {fileID: 2105454629109943695}
   conversationActor: {fileID: 0}
   startConversationEntryID: -1
@@ -238,4 +240,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   empathy: {fileID: 0}
   target: {fileID: 0}
+  questGiver: 1
+  questSign: {fileID: 0}
+  questAvailableSprite: {fileID: 0}
+  questAcceptedSprite: {fileID: 21300000, guid: 6758de5d69c83b944a3ed78861fb8c1d,
+    type: 3}
   interacted: 0
+--- !u!114 &1078805193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105454629109943692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b30da6de3fb97db479f433b9712b1f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  parameterNames:
+  - PlayingGuitar
+  - Pickaxe
+  parameterValues: 0000
+--- !u!1001 &3423498522966920378
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2105454629109943695}
+    m_Modifications:
+    - target: {fileID: 7265355990017999943, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_Name
+      value: QuestSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fa4c826482cc23c44afc3eb41b07ae2d, type: 3}
+--- !u!4 &6873623533847143387 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3423498522966920378}
+  m_PrefabAsset: {fileID: 0}
