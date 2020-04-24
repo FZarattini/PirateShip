@@ -55,7 +55,7 @@ public class Conscientiousness : MonoBehaviour
         completedQuests += 1;
     }
 
-    public void AssignConscientiousness()
+    public float AssignConscientiousness()
     {
         float questCompletionRate = completedQuests / maxQuests;
 
@@ -87,7 +87,8 @@ public class Conscientiousness : MonoBehaviour
         //Normaliza o valor
         float normalizedValue = (mean - 1) / 4.0f;
 
-        player.personality.personality[1] = normalizedValue;
+        return normalizedValue;
+        //player.personality.personality[1] = normalizedValue;
     }
 
 }

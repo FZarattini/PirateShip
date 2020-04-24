@@ -28,7 +28,7 @@ public class Agreeableness : MonoBehaviour
 
     public PlayerController player;
 
-    public int maxQuests;
+    //public int maxQuests;
     [SerializeField] int activeQuests = 0;
 
     public float assignedValue;
@@ -62,7 +62,7 @@ public class Agreeableness : MonoBehaviour
     }
 
 
-    public void AssignAgreeableness()
+    public float AssignAgreeableness()
     {
         //Recupera a pontuação e a pontuação reversa
         assignedValue = DialogueLua.GetVariable("AgreeablenessValue").AsFloat;
@@ -73,6 +73,7 @@ public class Agreeableness : MonoBehaviour
         //Normaliza o valor
         float normalizedValue = (mean - 1) / 4.0f;
 
-        player.personality.personality[3] = normalizedValue;
+        return normalizedValue;
+        //player.personality.personality[3] = normalizedValue;
     }
 }

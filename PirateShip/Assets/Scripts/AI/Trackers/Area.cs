@@ -9,12 +9,12 @@ public class Area : MonoBehaviour
         Object.Destroy(this.gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
             GameController.CheckVisitedArea();
             DeleteArea();
         }
-    }
+    }*/
 }

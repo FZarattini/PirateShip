@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Quest : MonoBehaviour
 {
-
     public bool accepted = false;
     public bool completed = false;
     public bool rejected = false;

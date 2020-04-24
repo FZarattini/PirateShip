@@ -39,13 +39,12 @@ public class GameController : MonoBehaviour
     public List<NPCController> npcList;
     public List<Quest> questList;
 
-
-
     // Start is called before the first frame update
     void Awake()
     {
         //player = Instantiate(playerPrefab, playerParent).gameObject.GetComponent<PlayerController
-        
+        //LoadNPCs();
+        //LoadQuests();
 
     }
 
@@ -67,11 +66,11 @@ public class GameController : MonoBehaviour
             toggleInventory();
         }
 
-        if (DialogueLua.GetVariable("QuestAccepted").AsBool == true)
+       /* if (DialogueLua.GetVariable("QuestAccepted").AsBool == true)
         {
             CheckAcceptedQuests();
             DialogueLua.SetVariable("QuestAccepted", "false");
-        }
+        }*/
     }
 
     public void GetScene()
@@ -138,48 +137,4 @@ public class GameController : MonoBehaviour
         sm = FindObjectOfType<SpawnManager>();
         SpawnPlayer();
     }
-
-
-#region TrackerCheckers
-
-    public static void CheckInteractions()
-    {
-        //Instance.RegisterInteractions();
-        foreach (NPCController n in Instance.npcList)
-        {
-            if (n.interacted == true)
-            {
-                if (scene.name == "Tracker1")
-                    Extraversion.RegisterNPC();
-            }
-        }
-
-    }
-
-    public static void CheckAcceptedQuests()
-    {
-        if (scene.name == "Tracker1")
-            Agreeableness.RegisterAcceptedQuest();
-    }
-
-    public static void CheckCompletedQuests()
-    {
-        foreach (Quest quest in Instance.questList)
-        {
-            if (quest.completed == true)
-            {
-                if (scene.name == "Tracker1")
-                    Conscientiousness.RegisterCompletedQuest();
-            }
-        }
-    }
-
-    public static void CheckVisitedArea()
-    {
-        if (scene.name == "Tracker1")
-            Openness.RegisterVisit();
-    }
-
-    #endregion
-
 }

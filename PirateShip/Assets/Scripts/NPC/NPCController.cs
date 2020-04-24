@@ -10,6 +10,10 @@ public class NPCController : MonoBehaviour
     public Empathy empathy;
     public Transform target;
 
+    private bool canInteract = false;
+
+    public bool essential;
+
     public bool questGiver;
 
     public GameObject questSign;
@@ -31,7 +35,12 @@ public class NPCController : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E) && canInteract)
+        {
+            interacted = true;
+            if (target)
+                LookAt(target);
+        }
     }
 
     public void OnQuestAccepted()
@@ -68,13 +77,19 @@ public class NPCController : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+        if (collision.tag == "Player")
         {
-            interacted = true;
-            if (target)
-                LookAt(target);
+            canInteract = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            canInteract = false;
         }
     }
 

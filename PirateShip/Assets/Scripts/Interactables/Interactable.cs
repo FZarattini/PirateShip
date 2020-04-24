@@ -3,7 +3,7 @@
 public class Interactable : MonoBehaviour
 {
     public bool canInteract = false;
-    private bool hasInteracted = false;
+    public bool hasInteracted;
 
 
     public virtual void Interact()
@@ -14,5 +14,15 @@ public class Interactable : MonoBehaviour
     private void Update()
     {
         
+    }
+
+    public bool GetHasInteracted()
+    {
+        return this.hasInteracted;
+    }
+
+    public void SetHasInteracted(bool value)
+    {
+        this.hasInteracted = value;
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Personality
 {
-    static int qtdEmocoes = 4;
     static int qtdPersonalidades = 5;
 
     public float Openness;
@@ -15,7 +14,7 @@ public class Personality
 
     public float[] personality = new float[qtdPersonalidades];
 
-    public float[,] PositiveFactors = new float[5, 4] 
+    /*public float[,] PositiveFactors = new float[5, 4] 
     {
         {-1, 1, 1, -1 },
         {0, 1, 0, 0 },
@@ -31,7 +30,7 @@ public class Personality
         { 0, 0, 1, -1 },
         { 0, -1, 0, 0 },
         { 1, 1, 1, -1 }
-    };
+    };*/
 
     public Personality(float[] personality)
     {
@@ -41,11 +40,11 @@ public class Personality
         Agreeableness = personality[3];
         Neuroticism = personality[4];
 
-        Mathf.Clamp(Openness, 0f, 1f);
-        Mathf.Clamp(Conscientiousness, 0f, 1f);
-        Mathf.Clamp(Extraversion, 0f, 1f);
-        Mathf.Clamp(Agreeableness, 0f, 1f);
-        Mathf.Clamp(Neuroticism, 0f, 1f);
+        //Mathf.Clamp(Openness, 0f, 1f);
+        //Mathf.Clamp(Conscientiousness, 0f, 1f);
+        //Mathf.Clamp(Extraversion, 0f, 1f);
+        //Mathf.Clamp(Agreeableness, 0f, 1f);
+        //Mathf.Clamp(Neuroticism, 0f, 1f);
 
         Initialize();
     }

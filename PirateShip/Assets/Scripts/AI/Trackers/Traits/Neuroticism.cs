@@ -39,7 +39,7 @@ public class Neuroticism : MonoBehaviour
         
     }
 
-    public void AssignNeuroticism()
+    public float AssignNeuroticism()
     {
         //Recupera a pontuação e a pontuação reversa
         assignedValue = DialogueLua.GetVariable("NeuroticismValue").AsFloat;
@@ -50,6 +50,7 @@ public class Neuroticism : MonoBehaviour
         //Normaliza o valor
         float normalizedValue = (mean - 1) / 4.0f;
 
-        player.personality.personality[4] = normalizedValue;
+        return normalizedValue;
+        //player.personality.personality[4] = normalizedValue;
     }
 }

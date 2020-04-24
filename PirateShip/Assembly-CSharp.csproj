@@ -64,6 +64,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AI\Empathy.cs" />
     <Compile Include="Assets\Scripts\AI\Personality.cs" />
+    <Compile Include="Assets\Scripts\AI\PersonalityAssigner.cs" />
+    <Compile Include="Assets\Scripts\AI\PersonalityDisplay.cs" />
+    <Compile Include="Assets\Scripts\AI\Tracker2SceneController.cs" />
     <Compile Include="Assets\Scripts\AI\Trackers\Area.cs" />
     <Compile Include="Assets\Scripts\AI\Trackers\Traits\Agreeableness.cs" />
     <Compile Include="Assets\Scripts\AI\Trackers\Traits\Conscientiousness.cs" />
@@ -103,9 +106,14 @@
     <Compile Include="Assets\Scripts\Quests\GrandfathersWatch.cs" />
     <Compile Include="Assets\Scripts\Quests\Guitar.cs" />
     <Compile Include="Assets\Scripts\Quests\MainQuest_Bundles.cs" />
+    <Compile Include="Assets\Scripts\Quests\MainQuest_DecorationHelp.cs" />
+    <Compile Include="Assets\Scripts\Quests\MainQuest_ExerciseBuddy.cs" />
+    <Compile Include="Assets\Scripts\Quests\MainQuest_GameIdea.cs" />
+    <Compile Include="Assets\Scripts\Quests\MainQuest_PastStory.cs" />
+    <Compile Include="Assets\Scripts\Quests\MainQuest_RebelTeenager.cs" />
+    <Compile Include="Assets\Scripts\Quests\MainQuest_WitchPrank.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestSign\QuestSign.cs" />
-    <Compile Include="Assets\Scripts\Quests\RebelTeenager.cs" />
     <Compile Include="Assets\Scripts\Sequencer\SequencerCommandPlayer.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Users/felip/Desktop/ICAD/PirateShip/PirateShip/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
