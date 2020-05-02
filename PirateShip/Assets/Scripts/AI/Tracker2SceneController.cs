@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 public class Tracker2SceneController : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class Tracker2SceneController : MonoBehaviour
     public Extraversion extraversion;
     public Agreeableness agreeableness;
     public Neuroticism neuroticism;
+
+    public NPCController minerBoss;
+    public Quest lastQuest;
+
+    public GameObject cutsceneTimeline;
+    private bool cutsceneStarted = false;
 
     //private int mainQuestsCompleted = 0;
     private int mainQuestsTotal = 0;
@@ -43,6 +50,12 @@ public class Tracker2SceneController : MonoBehaviour
         if (hasGenerated)
         {
             CancelInvoke();
+        }
+
+        if (lastQuest.completed && (cutsceneStarted == false))
+        {
+            cutsceneTimeline.SetActive(true);
+            cutsceneStarted = true;
         }
     }
 
@@ -87,8 +100,7 @@ public class Tracker2SceneController : MonoBehaviour
         generatedPersonality[1] = conscientiousness.AssignConscientiousness();
         generatedPersonality[2] = extraversion.AssignExtraversion();
         generatedPersonality[3] = agreeableness.AssignAgreeableness();
-        //generatedPersonality[4] = neuroticism.AssignNeuroticism();
-        generatedPersonality[4] = 0f;
+        generatedPersonality[4] = neuroticism.AssignNeuroticism();
 
         gc.player.personality = new Personality(generatedPersonality);
 
@@ -107,11 +119,14 @@ public class Tracker2SceneController : MonoBehaviour
             }
         }
 
-        Debug.Log("Completed: " + mainQuestsCompleted);
-
-        if (mainQuestsCompleted == mainQuestsTotal)
+        if (mainQuestsCompleted == mainQuestsTotal && lastQuest.completed == false)
         {
-            Debug.Log(mainQuestsTotal);
+            DialogueLua.SetVariable("Tracker2MainQuestsCompleted", true);
+            minerBoss.transform.GetChild(0).gameObject.SetActive(true);
+        }
+
+        if (DialogueLua.GetVariable("PersonalityValuesAssigned").AsBool == true)
+        {
             GeneratePersonality();
         }
     }

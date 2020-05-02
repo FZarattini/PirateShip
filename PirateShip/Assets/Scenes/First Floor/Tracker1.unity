@@ -6396,7 +6396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435858031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.56, y: -14.32, z: 11.563201}
+  m_LocalPosition: {x: 44.56, y: -14.311, z: 11.563201}
   m_LocalScale: {x: 2.81495, y: 2.81495, z: 2.81495}
   m_Children: []
   m_Father: {fileID: 468251382}
@@ -24806,7 +24806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1690141414
 Animator:
   serializedVersion: 3
@@ -24885,8 +24885,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMov: {fileID: 1599239064}
   playerAnimator: {fileID: 1599239066}
-  playerAnim: {fileID: 0}
   director: {fileID: 1690141415}
+  nextTimeline: {fileID: 0}
+  nextTimelineVarName: 
 --- !u!1 &1701035962
 GameObject:
   m_ObjectHideFlags: 0

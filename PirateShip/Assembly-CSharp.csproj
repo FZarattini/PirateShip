@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\AI\Trackers\Traits\Neuroticism.cs" />
     <Compile Include="Assets\Scripts\AI\Trackers\Traits\Openness.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraSway.cs" />
+    <Compile Include="Assets\Scripts\Camera\CutsceneCameraController.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Assets\Scripts\Quests\MainQuest_ExerciseBuddy.cs" />
     <Compile Include="Assets\Scripts\Quests\MainQuest_GameIdea.cs" />
     <Compile Include="Assets\Scripts\Quests\MainQuest_PastStory.cs" />
+    <Compile Include="Assets\Scripts\Quests\MainQuest_PirateAttackOpening.cs" />
     <Compile Include="Assets\Scripts\Quests\MainQuest_RebelTeenager.cs" />
     <Compile Include="Assets\Scripts\Quests\MainQuest_WitchPrank.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />

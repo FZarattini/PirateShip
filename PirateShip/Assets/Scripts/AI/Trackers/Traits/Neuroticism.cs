@@ -36,11 +36,11 @@ public class Neuroticism : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public float AssignNeuroticism()
     {
+        
         //Recupera a pontuação e a pontuação reversa
         assignedValue = DialogueLua.GetVariable("NeuroticismValue").AsFloat;
         assignedReverseValue = 6 - DialogueLua.GetVariable("NeuroticismReversedValue").AsFloat;
