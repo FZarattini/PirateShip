@@ -1049,6 +1049,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 45
+    fields:
+    - title: Name
+      value: PersonalityValuesAssigned
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -9729,7 +9743,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 844.47284
-        y: 568.33795
+        y: 572.6237
         width: 160
         height: 30
     - id: 9
@@ -13916,8 +13930,8 @@ MonoBehaviour:
         y: 2563.1335
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 2080.5613}
-    canvasZoom: 0.39999983
+    canvasScrollPosition: {x: 183.2934, y: 403.1384}
+    canvasZoom: 0.6999998
   - id: 14
     fields:
     - title: Title
@@ -30791,8 +30805,8 @@ MonoBehaviour:
         y: 1678.4856
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.25000006
+    canvasScrollPosition: {x: 0, y: 638.4829}
+    canvasZoom: 0.22000015
   - id: 29
     fields:
     - title: Title
@@ -30991,7 +31005,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["NeuroticismReversedValue"] = 1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -31062,7 +31076,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["NeuroticismReversedValue"] = 2
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -31133,7 +31147,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["NeuroticismReversedValue"] = 3
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -31204,7 +31218,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["NeuroticismReversedValue"] = 4
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -31275,7 +31289,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["NeuroticismReversedValue"] = 5
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -31328,7 +31342,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: WaitForMessage(Continue)
         type: 0
         typeString: 
       conversationID: 29
@@ -31352,8 +31366,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 83.27845
-        y: 246.32956
+        x: 1
+        y: 247.5954
         width: 160
         height: 30
     - id: 9
@@ -31371,7 +31385,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 18
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -31399,7 +31413,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: WaitForMessage(Continue)
         type: 0
         typeString: 
       conversationID: 29
@@ -31409,7 +31423,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 29
+        originDialogueID: 9
+        destinationConversationID: 29
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -31417,14 +31437,14 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 552.83484
-        y: 241.02753
+        x: 545.56213
+        y: 244.82498
         width: 160
         height: 30
     - id: 10
       fields:
       - title: Title
-        value: New Dialogue Entry
+        value: 
         type: 0
         typeString: 
       - title: Pictures
@@ -31436,7 +31456,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 18
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -31448,7 +31468,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 
+        value: He is right!
         type: 0
         typeString: 
       - title: Parenthetical
@@ -31464,7 +31484,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: WaitForMessage(Continue)
         type: 0
         typeString: 
       conversationID: 29
@@ -31474,7 +31494,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 29
+        originDialogueID: 10
+        destinationConversationID: 29
+        destinationDialogueID: 17
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -31482,8 +31508,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 737.75226
-        y: 240.35779
+        x: 735.2206
+        y: 244.15527
         width: 160
         height: 30
     - id: 11
@@ -31529,7 +31555,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: WaitForMessage(Continue)
         type: 0
         typeString: 
       conversationID: 29
@@ -31600,7 +31626,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: WaitForMessage(Continue)
         type: 0
         typeString: 
       conversationID: 29
@@ -31742,7 +31768,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: WaitForMessage(Continue)
         type: 0
         typeString: 
       conversationID: 29
@@ -31844,7 +31870,7 @@ MonoBehaviour:
     - id: 16
       fields:
       - title: Title
-        value: New Dialogue Entry
+        value: 
         type: 0
         typeString: 
       - title: Pictures
@@ -31868,7 +31894,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 
+        value: We will go with you pirates, so there's no reason for you to hurt
+          anyone!
         type: 0
         typeString: 
       - title: Parenthetical
@@ -31884,7 +31911,291 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
+        value: WaitForMessage(Continue)
+        type: 0
+        typeString: 
+      conversationID: 29
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 29
+        originDialogueID: 16
+        destinationConversationID: 29
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: Variable["PersonalityValuesAssigned"] = true
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 278.9817
+        y: 713.1075
+        width: 160
+        height: 30
+    - id: 17
+      fields:
+      - title: Title
         value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: We can't fight them. We need to go!
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: WaitForMessage(Continue)
+        type: 0
+        typeString: 
+      conversationID: 29
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 29
+        originDialogueID: 17
+        destinationConversationID: 29
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 735.2206
+        y: 345.06433
+        width: 160
+        height: 30
+    - id: 18
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 18
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: GREAT! Less work for us!
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: WaitForMessage(Continue)
+        type: 0
+        typeString: 
+      conversationID: 29
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 29
+        originDialogueID: 18
+        destinationConversationID: 29
+        destinationDialogueID: 20
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 278.9817
+        y: 815.8348
+        width: 160
+        height: 30
+    - id: 20
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 18
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Don't worry, you will feel right at home!
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: WaitForMessage(Continue)
+        type: 0
+        typeString: 
+      conversationID: 29
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 29
+        originDialogueID: 20
+        destinationConversationID: 29
+        destinationDialogueID: 21
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 280.79987
+        y: 914.9257
+        width: 160
+        height: 30
+    - id: 21
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 18
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: YA HA HA HA HA HA HA!
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: WaitForMessage(Continue)
         type: 0
         typeString: 
       conversationID: 29
@@ -31902,12 +32213,12 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 278.9817
-        y: 705.8348
+        x: 280.79987
+        y: 999.4711
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 134.23914}
-    canvasZoom: 0.7900003
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.5200005
   syncInfo:
     syncActors: 0
     syncItems: 0
