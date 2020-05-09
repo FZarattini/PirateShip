@@ -16,6 +16,7 @@ public class TimelineManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(gameObject.name + " Iniciando ");
         playerMov.enabled = false;
     }
 
@@ -23,25 +24,22 @@ public class TimelineManager : MonoBehaviour
     void OnEnable()
     {
         playerAnim = playerAnimator.runtimeAnimatorController;
-        //playerAnimator.runtimeAnimatorController = null;
-        //playerMov.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(director.state != PlayState.Playing && !fix)
+        if (director.state != PlayState.Playing && !fix && DialogueLua.GetVariable("DialogueInProgress").AsBool == false)
         {
             fix = true;
             playerMov.enabled = true;
-            playerAnimator.runtimeAnimatorController = null;
             playerAnimator.runtimeAnimatorController = playerAnim;
         }
 
         if (nextTimelineVarName != "")
         {
-            if(DialogueLua.GetVariable(nextTimelineVarName).AsBool == true)
-            {
+            if (DialogueLua.GetVariable(nextTimelineVarName).AsBool == true)
+            {               
                 nextTimeline.SetActive(true);
                 Destroy(this);
             }

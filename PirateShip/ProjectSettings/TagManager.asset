@@ -12,6 +12,8 @@ TagManager:
   - Ladder
   - Carriable
   - Quest
+  - Bounds
+  - PersonalityDisplay
   layers:
   - Default
   - TransparentFX

@@ -1063,6 +1063,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 46
+    fields:
+    - title: Name
+      value: SceneTransition1
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -1384,8 +1398,8 @@ MonoBehaviour:
         y: 264
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 80}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 30.007694, y: 94.94945}
+    canvasZoom: 1.1199999
   - id: 2
     fields:
     - title: Title
@@ -3522,8 +3536,8 @@ MonoBehaviour:
         y: 200.72119
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 16.57666}
-    canvasZoom: 0.6100002
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.49000028
   - id: 5
     fields:
     - title: Title
@@ -13930,8 +13944,8 @@ MonoBehaviour:
         y: 2563.1335
         width: 160
         height: 30
-    canvasScrollPosition: {x: 183.2934, y: 403.1384}
-    canvasZoom: 0.6999998
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.43000004
   - id: 14
     fields:
     - title: Title
@@ -18641,8 +18655,8 @@ MonoBehaviour:
         y: 1850.5446
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 279.41168}
-    canvasZoom: 0.34000015
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.40000015
   - id: 16
     fields:
     - title: Title
@@ -18748,18 +18762,6 @@ MonoBehaviour:
       - originConversationID: 16
         originDialogueID: 0
         destinationConversationID: 16
-        destinationDialogueID: 22
-        isConnector: 0
-        priority: 2
-      - originConversationID: 16
-        originDialogueID: 0
-        destinationConversationID: 16
-        destinationDialogueID: 28
-        isConnector: 0
-        priority: 2
-      - originConversationID: 16
-        originDialogueID: 0
-        destinationConversationID: 16
         destinationDialogueID: 42
         isConnector: 0
         priority: 2
@@ -18846,7 +18848,8 @@ MonoBehaviour:
         destinationDialogueID: 3
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["PastFullyTold"] == false and (Variable["PastPartiallyTold"]
+        == false)
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -19794,71 +19797,6 @@ MonoBehaviour:
         y: 1091.0038
         width: 160
         height: 30
-    - id: 22
-      fields:
-      - title: Title
-        value: New Dialogue Entry
-        type: 0
-        typeString: 
-      - title: Pictures
-        value: '[]'
-        type: 3
-        typeString: CustomFieldType_Files
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 10
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Parenthetical
-        value: 
-        type: 0
-        typeString: 
-      - title: Audio Files
-        value: '[]'
-        type: 3
-        typeString: CustomFieldType_Files
-      - title: Video File
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 16
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 511
-        y: 96
-        width: 160
-        height: 30
     - id: 23
       fields:
       - title: Title
@@ -20150,72 +20088,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 663.69586
         y: 1210.4205
-        width: 160
-        height: 30
-    - id: 28
-      fields:
-      - title: Title
-        value: New Dialogue Entry
-        type: 0
-        typeString: 
-      - title: Pictures
-        value: '[]'
-        type: 3
-        typeString: CustomFieldType_Files
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 10
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Parenthetical
-        value: 
-        type: 0
-        typeString: 
-      - title: Audio Files
-        value: '[]'
-        type: 3
-        typeString: CustomFieldType_Files
-      - title: Video File
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: WaitForMessage(Continue)
-        type: 0
-        typeString: 
-      conversationID: 16
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: Variable["PastFullyTold"] == false and (Variable["PastPartiallyTold"]
-        == false)
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 511
-        y: 96
         width: 160
         height: 30
     - id: 29
@@ -21075,8 +20947,8 @@ MonoBehaviour:
         y: 98.05597
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 1098.2837}
-    canvasZoom: 0.4
+    canvasScrollPosition: {x: 56.472477, y: 42.651268}
+    canvasZoom: 0.6099999
   - id: 17
     fields:
     - title: Title
@@ -27636,7 +27508,7 @@ MonoBehaviour:
         y: 143.69223
         width: 160
         height: 30
-    canvasScrollPosition: {x: 171.3494, y: 140.31956}
+    canvasScrollPosition: {x: 0, y: 32.653015}
     canvasZoom: 0.49000058
   - id: 25
     fields:
@@ -32205,7 +32077,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 29
+        originDialogueID: 21
+        destinationConversationID: 29
+        destinationDialogueID: 22
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -32215,6 +32093,71 @@ MonoBehaviour:
         serializedVersion: 2
         x: 280.79987
         y: 999.4711
+        width: 160
+        height: 30
+    - id: 22
+      fields:
+      - title: Title
+        value: New Dialogue Entry
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 18
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 29
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: Variable["SceneTransition1"] = true
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 276.95374
+        y: 1070.6251
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}

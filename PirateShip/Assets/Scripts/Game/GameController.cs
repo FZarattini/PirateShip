@@ -26,10 +26,10 @@ public class GameController : MonoBehaviour
     /////////////////////////////////////////////////
     ///On game start - Implement later
     public GameObject playerPrefab;
-    public Transform playerParent;
     /////////////////////////////////////////////////
 
     private static Scene scene;
+    private LoadSceneMode mode;
 
     public PlayerController player;
     public SpawnManager sm;
@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        
         //player = Instantiate(playerPrefab, playerParent).gameObject.GetComponent<PlayerController
         //LoadNPCs();
         //LoadQuests();
@@ -50,6 +51,10 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        //SceneManager.sceneLoaded += LoadNPCs;
+        //SceneManager.sceneLoaded += LoadQuests;
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         LoadNPCs();
         LoadQuests();
         /*if(scene.name != "Tracker1" || scene.name != "Tracker2")
@@ -88,12 +93,22 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void ClearNPCs()
+    {
+        npcList.Clear();
+    }
+
     public void LoadQuests()
     {
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Quest"))
         {
             questList.Add(obj.GetComponent<Quest>());
         }
+    }
+
+    public void ClearQuests()
+    {
+        questList.Clear();
     }
 
     #endregion
@@ -121,20 +136,18 @@ public class GameController : MonoBehaviour
 
     }
 
-    public void SetSpawnID(int id)
-    {
-        spawnID = id;
-    }
-
-    private void SpawnPlayer()
-    {
-        player.transform.position = sm.spawnPoints[spawnID].position;
-    }
 
     private void OnLevelWasLoaded(int level)
     {
         player = FindObjectOfType<PlayerController>();
         sm = FindObjectOfType<SpawnManager>();
-        SpawnPlayer();
+
+        //Scene scene, LoadSceneMode mode
+
+        player.personality.LoadPersonality();
+        ClearNPCs();
+        ClearQuests();
+        LoadNPCs();
+        LoadQuests();
     }
 }

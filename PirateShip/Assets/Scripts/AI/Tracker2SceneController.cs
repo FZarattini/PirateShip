@@ -5,8 +5,10 @@ using PixelCrushers.DialogueSystem;
 
 public class Tracker2SceneController : MonoBehaviour
 {
-    public GameController gc;
-    public PersonalityDisplay pd;
+    private GameController gc;
+    private PersonalityDisplay pd;
+
+    private PlayerController player;
 
     public Openness openness;
     public Conscientiousness conscientiousness;
@@ -28,6 +30,13 @@ public class Tracker2SceneController : MonoBehaviour
 
     private float[] generatedPersonality = new float[5];
 
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        pd = GameObject.FindGameObjectWithTag("PersonalityDisplay").GetComponent<PersonalityDisplay>();
+    }
+
     private void Start()
     {
         foreach (Quest q in gc.questList)
@@ -37,7 +46,7 @@ public class Tracker2SceneController : MonoBehaviour
                 mainQuestsTotal++;
             }
         }
-
+        
         InvokeRepeating("CheckGeneration", 1f, 1f);
         
     }
@@ -45,7 +54,12 @@ public class Tracker2SceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Total " + mainQuestsTotal);
+       
+        if(DialogueLua.GetVariable("SceneTransition1").AsBool == true)
+        {
+            player.personality.SavePersonality();
+            LevelManager.changeScene("BoilerRoom");
+        }
 
         if (hasGenerated)
         {
@@ -71,28 +85,6 @@ public class Tracker2SceneController : MonoBehaviour
 
     }
 
-/*
-    public  void CheckCompletedQuests()
-    {
-        foreach (Quest quest in gc.questList)
-        {
-            if (quest.completed == true)
-            {
-                Conscientiousness.RegisterCompletedQuest();
-            }
-        }
-    }
-
-    public  void CheckVisitedArea()
-    { 
-        Openness.RegisterVisit();
-    }
-
-    public  void CheckAcceptedQuests()
-    {
-        Agreeableness.RegisterAcceptedQuest();
-    }
-*/
     public void GeneratePersonality()
     {
         CheckInteractions();

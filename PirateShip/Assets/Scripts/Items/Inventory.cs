@@ -64,7 +64,6 @@ public class Inventory : MonoBehaviour
             if (items.Contains(item))
             {
                 index = items.IndexOf(item);
-                Debug.Log("INDEX " + index);
                 slots[index].quantity++;
 
                 if (onItemChangedCallback != null)

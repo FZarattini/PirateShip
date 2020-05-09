@@ -62,6 +62,25 @@ public class Personality
     // Update is called once per frame
     void Update()
     {
-
+        
     }
+
+    public void SavePersonality()
+    {
+        PlayerPrefs.SetFloat("Openness", personality[0]);
+        PlayerPrefs.SetFloat("Conscientiousness", personality[1]);
+        PlayerPrefs.SetFloat("Extraversion", personality[2]);
+        PlayerPrefs.SetFloat("Agreeableness", personality[3]);
+        PlayerPrefs.SetFloat("Neuroticism", personality[4]);
+    }
+
+    public void LoadPersonality()
+    {
+        personality[0] = PlayerPrefs.GetFloat("Openness");
+        personality[1] = PlayerPrefs.GetFloat("Conscientiousness");
+        personality[2] = PlayerPrefs.GetFloat("Extraversion");
+        personality[3] = PlayerPrefs.GetFloat("Agreeableness");
+        personality[4] = PlayerPrefs.GetFloat("Neuroticism");
+    }
+
 }

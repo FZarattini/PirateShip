@@ -9,13 +9,14 @@ public class Quest : MonoBehaviour
     public bool rejected = false;
     public bool failed = false;
     public NPCController giver;
+    protected Inventory inventory;
 
     public bool isMainQuest;
 
     // Start is called before the first frame update
     public virtual void Start()
     {
-        
+        inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
     }
 
     // Update is called once per frame

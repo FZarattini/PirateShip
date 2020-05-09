@@ -5,7 +5,6 @@ using PixelCrushers.DialogueSystem;
 
 public class Guitar : Quest
 {
-    public Inventory inventory;
     public Item guitar;
     public Item key;
     public DialogueSystemTrigger npcDialogue;

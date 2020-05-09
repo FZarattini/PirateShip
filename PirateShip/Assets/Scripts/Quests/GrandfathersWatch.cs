@@ -6,7 +6,6 @@ using PixelCrushers.DialogueSystem;
 public class GrandfathersWatch : Quest
 {
 
-    public Inventory inventory;
     public Item watch;
 
     // Update is called once per frame
