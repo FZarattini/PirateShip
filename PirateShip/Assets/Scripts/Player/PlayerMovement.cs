@@ -15,9 +15,6 @@ public class PlayerMovement : MonoBehaviour
     bool freeze = false;
     public bool onLadder = false;
     
-    
-    
-
     // Start is called before the first frame update
     void Start()
     {

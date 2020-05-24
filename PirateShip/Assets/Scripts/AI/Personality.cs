@@ -6,31 +6,13 @@ public class Personality
 {
     static int qtdPersonalidades = 5;
 
-    public float Openness;
-    public float Conscientiousness;
-    public float Extraversion;
-    public float Agreeableness;
-    public float Neuroticism;
+    private float Openness;
+    private float Conscientiousness;
+    private float Extraversion;
+    private float Agreeableness;
+    private float Neuroticism;
 
     public float[] personality = new float[qtdPersonalidades];
-
-    /*public float[,] PositiveFactors = new float[5, 4] 
-    {
-        {-1, 1, 1, -1 },
-        {0, 1, 0, 0 },
-        {-1, 1, 1, 1 },
-        {0, 0, 1, 1 },
-        {1, -1, -1, 1 }
-    };
-
-    public float[,] NegativeFactors = new float[5, 4]
-    {
-        { -1, -1, -1, 1 },
-        { 0, 0, 1, 1 },
-        { 0, 0, 1, -1 },
-        { 0, -1, 0, 0 },
-        { 1, 1, 1, -1 }
-    };*/
 
     public Personality(float[] personality)
     {
@@ -39,12 +21,6 @@ public class Personality
         Extraversion = personality[2];
         Agreeableness = personality[3];
         Neuroticism = personality[4];
-
-        //Mathf.Clamp(Openness, 0f, 1f);
-        //Mathf.Clamp(Conscientiousness, 0f, 1f);
-        //Mathf.Clamp(Extraversion, 0f, 1f);
-        //Mathf.Clamp(Agreeableness, 0f, 1f);
-        //Mathf.Clamp(Neuroticism, 0f, 1f);
 
         Initialize();
     }
@@ -67,20 +43,27 @@ public class Personality
 
     public void SavePersonality()
     {
-        PlayerPrefs.SetFloat("Openness", personality[0]);
-        PlayerPrefs.SetFloat("Conscientiousness", personality[1]);
-        PlayerPrefs.SetFloat("Extraversion", personality[2]);
-        PlayerPrefs.SetFloat("Agreeableness", personality[3]);
-        PlayerPrefs.SetFloat("Neuroticism", personality[4]);
+        Debug.Log("Salvando Personalidade!");
+        PlayerPrefs.SetFloat("Openness", this.personality[0]);
+        PlayerPrefs.SetFloat("Conscientiousness", this.personality[1]);
+        PlayerPrefs.SetFloat("Extraversion", this.personality[2]);
+        PlayerPrefs.SetFloat("Agreeableness", this.personality[3]);
+        PlayerPrefs.SetFloat("Neuroticism", this.personality[4]);
     }
 
     public void LoadPersonality()
     {
-        personality[0] = PlayerPrefs.GetFloat("Openness");
-        personality[1] = PlayerPrefs.GetFloat("Conscientiousness");
-        personality[2] = PlayerPrefs.GetFloat("Extraversion");
-        personality[3] = PlayerPrefs.GetFloat("Agreeableness");
-        personality[4] = PlayerPrefs.GetFloat("Neuroticism");
+        Debug.Log("Carregando Personalidade!");
+        this.personality[0] = PlayerPrefs.GetFloat("Openness");
+        this.personality[1] = PlayerPrefs.GetFloat("Conscientiousness");
+        this.personality[2] = PlayerPrefs.GetFloat("Extraversion");
+        this.personality[3] = PlayerPrefs.GetFloat("Agreeableness");
+        this.personality[4] = PlayerPrefs.GetFloat("Neuroticism");
+
     }
 
+    public void UpdatePersonality(int index, float value)
+    {
+        this.personality[index] = value;
+    }
 }

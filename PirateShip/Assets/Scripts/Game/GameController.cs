@@ -32,35 +32,30 @@ public class GameController : MonoBehaviour
     private LoadSceneMode mode;
 
     public PlayerController player;
-    public SpawnManager sm;
+    //public SpawnManager sm;
     public Canvas inventoryCanvas;
-    public int spawnID;
+    //public int spawnID;
 
     public List<NPCController> npcList;
     public List<Quest> questList;
+
+    public float sympMinDiff;
+    public float compMinDiff;
+    public float neutralMinDiff;
+    public float uncompMinDiff;
+    public float unsympMinDiff;
 
     // Start is called before the first frame update
     void Awake()
     {
         
-        //player = Instantiate(playerPrefab, playerParent).gameObject.GetComponent<PlayerController
-        //LoadNPCs();
-        //LoadQuests();
-
     }
 
     private void Start()
     {
-        //SceneManager.sceneLoaded += LoadNPCs;
-        //SceneManager.sceneLoaded += LoadQuests;
-
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         LoadNPCs();
         LoadQuests();
-        /*if(scene.name != "Tracker1" || scene.name != "Tracker2")
-        {
-            InitializeNPCs();
-        }*/
     }
 
     // Update is called once per frame
@@ -71,11 +66,6 @@ public class GameController : MonoBehaviour
             toggleInventory();
         }
 
-       /* if (DialogueLua.GetVariable("QuestAccepted").AsBool == true)
-        {
-            CheckAcceptedQuests();
-            DialogueLua.SetVariable("QuestAccepted", "false");
-        }*/
     }
 
     public void GetScene()
@@ -88,7 +78,7 @@ public class GameController : MonoBehaviour
     public void LoadNPCs()
     {
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("NPC"))
-        {
+        {           
             npcList.Add(obj.GetComponent<NPCController>());
         }
     }
@@ -113,11 +103,16 @@ public class GameController : MonoBehaviour
 
     #endregion
 
-    private void InitializeNPCs()
+    public void InitializeNPCs()
     {
         foreach (NPCController n in npcList)
-        {
-            n.empathy.CalculateBaseEmpathy(player.personality, n.personality);
+        {            
+            if(n.hasEmpathy == false)
+            {
+                n.empathy.CalculateBaseEmpathy(player.personality, n.personality);
+                n.hasEmpathy = true;
+                Debug.Log("NPC: " + n.gameObject.name + " Empatia: " + n.empathy.empathy);
+            }
         }
     }
 
@@ -136,15 +131,16 @@ public class GameController : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        
+    }
 
     private void OnLevelWasLoaded(int level)
     {
-        player = FindObjectOfType<PlayerController>();
-        sm = FindObjectOfType<SpawnManager>();
 
-        //Scene scene, LoadSceneMode mode
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
-        player.personality.LoadPersonality();
         ClearNPCs();
         ClearQuests();
         LoadNPCs();

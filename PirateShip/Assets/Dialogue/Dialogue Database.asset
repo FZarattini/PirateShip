@@ -9566,7 +9566,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["VillagerSonAccepted"] == true and (Variable["VillagerSonCompleted"]
-        == false) and (Variable["VillagerSonRejected"] == false)
+        == false) and (Variable["VillagerSonRejected"] == false) and (Variable["VillagerSonFailed"]
+        == false)
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -14268,8 +14269,8 @@ MonoBehaviour:
         y: 2563.1335
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.43000004
+    canvasScrollPosition: {x: 0, y: 738.5897}
+    canvasZoom: 0.5799998
   - id: 14
     fields:
     - title: Title
@@ -23708,7 +23709,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: That's why we're asking you, Glas..
+        value: That's why we're asking you, Glass..
         type: 0
         typeString: 
       - title: Parenthetical
@@ -24287,7 +24288,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: You could pretend you're anyone and then imagine that person's world
-          aroung you!
+          around you!
         type: 0
         typeString: 
       - title: Parenthetical
@@ -24668,8 +24669,8 @@ MonoBehaviour:
         y: 104.950806
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.46000051
+    canvasScrollPosition: {x: 301.2214, y: 561.9252}
+    canvasZoom: 0.8800006
   - id: 23
     fields:
     - title: Title

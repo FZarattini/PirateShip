@@ -15,10 +15,6 @@ public class MainQuest_Bundles : Quest
 
     public override void Update()
     {
-        if (inventory.items.Contains(shinyBundle))
-        {
-            Debug.Log(inventory.slots[inventory.items.IndexOf(shinyBundle)].quantity);
-        }
         if (inventory.items.Contains(shinyBundle) && inventory.slots[inventory.items.IndexOf(shinyBundle)].quantity == 5)
         {
             DialogueLua.SetVariable("MainQuest_HasBundles", true);

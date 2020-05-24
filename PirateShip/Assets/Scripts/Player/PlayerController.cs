@@ -6,18 +6,32 @@ public class PlayerController : MonoBehaviour
 {
 
     public Personality personality;
+    public bool hasPersonality;
+
+    private float[] tempPersonality = {0f,0f,0f,0f,0f};
+   
     public static bool canTeleport {get; set;}
+
+    private void Awake()
+    {
+        if (hasPersonality)
+        {
+            personality = new Personality(tempPersonality);
+            personality.LoadPersonality();
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-     
+        if(hasPersonality)
+            Debug.Log("O: " + personality.personality[0] + " C: " + personality.personality[1] + " E: " + personality.personality[2] + " A: " + personality.personality[3] + " N: " + personality.personality[4]);
     }
 
     public void TeleportPlayer(Transform destination)
@@ -47,7 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             collision.gameObject.GetComponent<Carriable>().SetPlayer(gameObject.transform);
             collision.gameObject.GetComponent<Carriable>().SetCanEquip(true);
-            collision.gameObject.GetComponent<Carriable>().SetCanEquip(true);
+            //collision.gameObject.GetComponent<Carriable>().SetCanEquip(true);
                       
         }
     }
@@ -70,6 +84,4 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
-
 }

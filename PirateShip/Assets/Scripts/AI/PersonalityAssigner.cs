@@ -47,17 +47,11 @@ public class PersonalityAssigner : MonoBehaviour
 
     public void GeneratePersonality()
     {
-
         generatedPersonality[0] = openness.AssignOpenness();
-        //openness.AssignOpenness();
         generatedPersonality[1] = conscientiousness.AssignConscientiousness();
-        //conscientiousness.AssignConscientiousness();
         generatedPersonality[2] = extraversion.AssignExtraversion();
-        //extraversion.AssignExtraversion();
         generatedPersonality[3] = agreeableness.AssignAgreeableness();
-        //agreeableness.AssignAgreeableness();
         generatedPersonality[4] = neuroticism.AssignNeuroticism();
-        //neuroticism.AssignNeuroticism();
     }
 
     public void CheckGeneration()

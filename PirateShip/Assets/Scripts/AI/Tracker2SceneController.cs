@@ -63,6 +63,7 @@ public class Tracker2SceneController : MonoBehaviour
 
         if (hasGenerated)
         {
+            player.hasPersonality = true;
             CancelInvoke();
         }
 

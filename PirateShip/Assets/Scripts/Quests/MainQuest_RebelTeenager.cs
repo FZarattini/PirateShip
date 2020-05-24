@@ -48,6 +48,7 @@ public class MainQuest_RebelTeenager : Quest
 
         if (DialogueLua.GetVariable("VillagerSonFailed").AsBool == true)
         {
+            completed = true;
             failed = true;
         }
 

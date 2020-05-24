@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
+    public bool hasEmpathy = false;
     private Vector3 targetPos;
 
+    public float[] personalityValues;
     public Personality personality;
     public Empathy empathy;
     public Transform target;
@@ -24,8 +26,9 @@ public class NPCController : MonoBehaviour
     protected virtual void Start()
     {
         empathy = new Empathy();
+        personality = new Personality(personalityValues);
 
-        if(target)
+        if (target)
         {
             targetPos = new Vector3(target.position.x, 0f, 0f);
         }
@@ -67,8 +70,7 @@ public class NPCController : MonoBehaviour
     {
 
         if(target.position.x - transform.position.x > 0 && transform.localScale.x > 0)
-        {
-            //transform.right = new Vector3(targetPos.x - transform.position.x, 0f, 0f);          
+        {     
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
         else if(target.position.x - transform.position.x < 0 && transform.localScale.x < 0)

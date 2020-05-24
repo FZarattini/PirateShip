@@ -16,7 +16,6 @@ public class TimelineManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(gameObject.name + " Iniciando ");
         playerMov.enabled = false;
     }
 

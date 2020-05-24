@@ -34,7 +34,7 @@ Transform:
   m_LocalPosition: {x: 24.45, y: -25.17, z: 0}
   m_LocalScale: {x: 4.926722, y: 4.74675, z: 4.74675}
   m_Children:
-  - {fileID: 6873623533847143387}
+  - {fileID: 4476426032897046693}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -238,13 +238,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a3416beb22c4640b4d8a0363099ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasEmpathy: 0
+  personalityValues:
+  - 1
+  - 0.25
+  - 1
+  - 0.375
+  - 0.125
   empathy: {fileID: 0}
   target: {fileID: 0}
+  essential: 0
   questGiver: 1
   questSign: {fileID: 0}
-  questAvailableSprite: {fileID: 0}
-  questAcceptedSprite: {fileID: 21300000, guid: 6758de5d69c83b944a3ed78861fb8c1d,
-    type: 3}
   interacted: 0
 --- !u!114 &1078805193
 MonoBehaviour:
@@ -332,9 +337,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa4c826482cc23c44afc3eb41b07ae2d, type: 3}
---- !u!4 &6873623533847143387 stripped
+--- !u!4 &4476426032897046693 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8135385400710393697, guid: fa4c826482cc23c44afc3eb41b07ae2d,
+  m_CorrespondingSourceObject: {fileID: 1269381802605622303, guid: fa4c826482cc23c44afc3eb41b07ae2d,
     type: 3}
   m_PrefabInstance: {fileID: 3423498522966920378}
   m_PrefabAsset: {fileID: 0}

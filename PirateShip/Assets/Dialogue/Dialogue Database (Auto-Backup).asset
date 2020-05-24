@@ -1077,6 +1077,34 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 47
+    fields:
+    - title: Name
+      value: JailerTimelineEnd
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 48
+    fields:
+    - title: Name
+      value: DialogueInProgress
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -1147,7 +1175,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: <Start>
+        value: 
         type: 0
         typeString: 
       - title: Parenthetical
@@ -1163,7 +1191,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: None()
+        value: SetContinueMode(true)
         type: 0
         typeString: 
       conversationID: 1
@@ -1184,7 +1212,18 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11500000, guid: 6b6cfcda908680a449ea39632d34a704, type: 3}
+            m_MethodName: set_name
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: FreezeMovement()
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 294
@@ -1194,7 +1233,7 @@ MonoBehaviour:
     - id: 1
       fields:
       - title: Title
-        value: New Dialogue Entry
+        value: 
         type: 0
         typeString: 
       - title: Pictures
@@ -1218,7 +1257,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Hello!
+        value: LISTEN UP!
         type: 0
         typeString: 
       - title: Parenthetical
@@ -1234,7 +1273,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: WaitForMessage(Continue);
         type: 0
         typeString: 
       conversationID: 1
@@ -1252,20 +1291,20 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["DialogueInProgress"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 294
-        y: 137
+        y: 153.98114
         width: 160
         height: 30
     - id: 2
       fields:
       - title: Title
-        value: New Dialogue Entry
+        value: 
         type: 0
         typeString: 
       - title: Pictures
@@ -1289,7 +1328,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'm the Jailer!
+        value: Finally we have some workers around here. The crewmembers are a bunch
+          of good for nothing lazy bastards.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -1305,7 +1345,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: WaitForMessage(Continue)
         type: 0
         typeString: 
       conversationID: 1
@@ -1329,11 +1369,297 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 295
-        y: 189
+        x: 295.9434
+        y: 223.9057
         width: 160
         height: 30
     - id: 3
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: From now on you dogs are going to be responsible for feeding the boilers.
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: WaitForMessage(Continue)
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 3
+        destinationConversationID: 1
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 296
+        y: 280.98114
+        width: 160
+        height: 30
+    - id: 4
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: And be warned, there will be no slackers around here. The consequences
+          will be severe!
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: WaitForMessage(Continue)
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 4
+        destinationConversationID: 1
+        destinationDialogueID: 5
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 299.7736
+        y: 347.96228
+        width: 160
+        height: 30
+    - id: 5
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: My office is that door right behind me. Your living quarters are at
+          the end of the corridor past this room.
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: WaitForMessage(Continue)
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 5
+        destinationConversationID: 1
+        destinationDialogueID: 6
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 303.54718
+        y: 417.7736
+        width: 160
+        height: 30
+    - id: 6
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: NOW GET TO WORK!
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: WaitForMessage(Continue)
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 6
+        destinationConversationID: 1
+        destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 305.43396
+        y: 491.3585
+        width: 160
+        height: 30
+    - id: 7
       fields:
       - title: Title
         value: New Dialogue Entry
@@ -1348,11 +1674,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1360,7 +1686,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Hello, nice to meet you!
+        value: 
         type: 0
         typeString: 
       - title: Parenthetical
@@ -1388,18 +1714,21 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: 'Variable["DialogueInProgress"] = false
+
+        Variable["JailerTimelineEnd"]
+        = true;'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 296
-        y: 264
+        x: 306.9265
+        y: 556.28394
         width: 160
         height: 30
-    canvasScrollPosition: {x: 30.007694, y: 94.94945}
-    canvasZoom: 1.1199999
+    canvasScrollPosition: {x: 0, y: 20.883842}
+    canvasZoom: 0.67000026
   - id: 2
     fields:
     - title: Title
@@ -1556,9 +1885,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Player(false);
-
-          WaitForMessage(Continue)'
+        value: WaitForMessage(Continue)
         type: 0
         typeString: CustomFieldType_Text
       - title: Response Menu Sequence
@@ -1580,7 +1907,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["DialogueInProgress"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1708,10 +2035,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'WaitForMessage(Continue);
-
-
-'
+        value: WaitForMessage(Continue)
         type: 0
         typeString: 
       conversationID: 2
@@ -1762,12 +2086,12 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: As you know, simply approach a shiny bundle and press [E] to mine
-          it.
+        value: 
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 
+        value: As you know, simply approach a shiny bundle and press [E] to mine
+          it.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -1891,7 +2215,7 @@ MonoBehaviour:
       - title: Title
         value: New Dialogue Entry
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Pictures
         value: '[]'
         type: 3
@@ -1899,7 +2223,7 @@ MonoBehaviour:
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -1911,15 +2235,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Parenthetical
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Audio Files
         value: '[]'
         type: 3
@@ -1927,11 +2251,11 @@ MonoBehaviour:
       - title: Video File
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: Player(true);
+        value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -1941,7 +2265,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["DialogueInProgress"] = false
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1994,7 +2318,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: WaitForMessage(Continue)
         type: 0
         typeString: 
       conversationID: 2
@@ -2019,11 +2343,11 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 303.00003
-        y: 309.44775
+        y: 307.9552
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.6700003
+    canvasZoom: 1.3600001
   - id: 3
     fields:
     - title: Title
@@ -2831,7 +3155,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 424
-        y: 37
+        y: 34.959183
         width: 160
         height: 30
     - id: 1
@@ -2839,7 +3163,7 @@ MonoBehaviour:
       - title: Title
         value: New Dialogue Entry
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Pictures
         value: '[]'
         type: 3
@@ -2847,7 +3171,7 @@ MonoBehaviour:
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 4
         type: 5
@@ -2859,17 +3183,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 'Hey kid, we''ve been mining this shinies all day.
 
 '
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Parenthetical
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Audio Files
         value: '[]'
         type: 3
@@ -2877,11 +3201,11 @@ MonoBehaviour:
       - title: Video File
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: WaitForMessage(Continue)
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -5782,7 +6106,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 20
-        y: 30
+        y: 24.339622
         width: 160
         height: 30
     - id: 1
@@ -5854,7 +6178,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 20
-        y: 80
+        y: 74.33962
         width: 160
         height: 30
     - id: 2
@@ -5925,7 +6249,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 20
-        y: 130
+        y: 124.33961
         width: 160
         height: 30
     - id: 3
@@ -5991,7 +6315,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 20
-        y: 180
+        y: 174.33963
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
@@ -13945,7 +14269,7 @@ MonoBehaviour:
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.43000004
+    canvasZoom: 0.34000003
   - id: 14
     fields:
     - title: Title
@@ -23384,7 +23708,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: That's why we're asking you, Glas..
+        value: That's why we're asking you, Glass..
         type: 0
         typeString: 
       - title: Parenthetical
@@ -23963,7 +24287,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: You could pretend you're anyone and then imagine that person's world
-          aroung you!
+          around you!
         type: 0
         typeString: 
       - title: Parenthetical
@@ -24344,8 +24668,8 @@ MonoBehaviour:
         y: 104.950806
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.46000051
+    canvasScrollPosition: {x: 301.2214, y: 561.9252}
+    canvasZoom: 0.8800006
   - id: 23
     fields:
     - title: Title
@@ -28652,7 +28976,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["DialogueInProgress"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -30677,8 +31001,8 @@ MonoBehaviour:
         y: 1678.4856
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 638.4829}
-    canvasZoom: 0.22000015
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.22
   - id: 29
     fields:
     - title: Title
@@ -32150,18 +32474,21 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["SceneTransition1"] = true
+      userScript: 'Variable["SceneTransition1"] = true;
+
+        Variable["DialogueInProgress"]
+        = false'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 276.95374
-        y: 1070.6251
+        x: 283.40533
+        y: 1077.0767
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.5200005
+    canvasZoom: 0.31000063
   syncInfo:
     syncActors: 0
     syncItems: 0
