@@ -14,8 +14,6 @@ public class NPCController : MonoBehaviour
 
     private bool canInteract = false;
 
-    public bool essential;
-
     public bool questGiver;
 
     public GameObject questSign;

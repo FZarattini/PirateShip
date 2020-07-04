@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// The 5 possible levels of empathy
+/// </summary>
 public enum EmpathyEnum
 {
     sympathetic,
@@ -11,25 +14,25 @@ public enum EmpathyEnum
     unsympathetic
 };
 
+/// <summary>
+/// Represents the Empathy between the player and the NPC
+/// </summary>
 public class Empathy : MonoBehaviour
 {
 
     public EmpathyEnum empathy;
+    float sympThreshold = 0.2f;
+    float compThreshold = 0.4f;
+    float neutralThreshold = 0.6f;
+    float incompThreshold = 0.8f;
+    float unsympThreshold = 1f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    //Relações entre personalidades retornando uma empatia do enumerador
-    public void CalculateBaseEmpathy(Personality playerPersonality, Personality npcPersonality)
+    /// <summary>
+    /// Calculates the base empathy considering every personality trait and its importance
+    /// </summary>
+    /// <param name="playerPersonality"></param>
+    /// <param name="npcPersonality"></param>
+    public void CalculateBaseEmpathy(float agreeablenessWeight, float conscientiousnessWeight, Personality playerPersonality, Personality npcPersonality)
     {
         Debug.Log("--------------------------------------------------------------------");
         float[] npcScore = npcPersonality.personality;
@@ -38,29 +41,30 @@ public class Empathy : MonoBehaviour
         float npcMean = 0;
         float personalityDiff;
 
-        playerMean = (playerScore[0] + playerScore[1] * 2.0f + playerScore[2] + playerScore[3] * 3.0f + playerScore[4]) / 8.0f;
-        npcMean = (npcScore[0] + npcScore[1] * 2.0f + npcScore[2] + npcScore[3] * 3.0f + npcScore[4]) / 8.0f;
+        playerMean = (playerScore[0] + playerScore[1] * conscientiousnessWeight + playerScore[2] + playerScore[3] * agreeablenessWeight + playerScore[4]) / 
+            (3.0f + conscientiousnessWeight + agreeablenessWeight);
+        npcMean = (npcScore[0] + npcScore[1] * conscientiousnessWeight + npcScore[2] + npcScore[3] * agreeablenessWeight + npcScore[4]) / 
+            (3.0f + conscientiousnessWeight + agreeablenessWeight);
 
         personalityDiff = Mathf.Abs(playerMean - npcMean);
         Debug.Log("PersonalityPlayer: " + playerMean + " PersonalityNPC: " + npcMean + " PersonalityDiff = " + personalityDiff);
 
-        if(personalityDiff <= 0.2f)
+        if(personalityDiff <= sympThreshold)
         {
             empathy = EmpathyEnum.sympathetic;
-        }else if(personalityDiff <= 0.4f)
+        }else if(personalityDiff <= compThreshold)
         {
             empathy = EmpathyEnum.comprehensive;
-        }else if (personalityDiff <= 0.6f)
+        }else if (personalityDiff <= neutralThreshold)
         {
             empathy = EmpathyEnum.neutral;
-        }else if (personalityDiff <= 0.8f)
+        }else if (personalityDiff <= incompThreshold)
         {
             empathy = EmpathyEnum.incomprehensive;
-        }else if(personalityDiff <= 1.0f)
+        }else if(personalityDiff <= unsympThreshold)
         {
             empathy = EmpathyEnum.unsympathetic;
         }
-
     }
 
     public void UpdateEmpathy(Personality npcPersonality, Personality playerPersonality)

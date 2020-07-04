@@ -18,7 +18,7 @@ MonoBehaviour:
   trackScale: 1
   playRangeEnabled: 0
   timeAreaPlayRange: {x: 4.823055, y: 5.117579}
-  windowTime: 0.19433129951357841
+  windowTime: 0
   verticalScroll: 0
   showMarkerHeader: 0
   m_Keys:

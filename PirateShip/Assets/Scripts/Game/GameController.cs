@@ -7,6 +7,9 @@ using PixelCrushers.DialogueSystem;
 public class GameController : MonoBehaviour
 {
 
+    public float agreeablenessWeight;
+    public float conscientiousnessWeight;
+
     #region Singleton
     private static GameController _instance;
     private static GameController Instance
@@ -23,33 +26,17 @@ public class GameController : MonoBehaviour
     }
     #endregion
 
-    /////////////////////////////////////////////////
-    ///On game start - Implement later
-    public GameObject playerPrefab;
-    /////////////////////////////////////////////////
-
     private static Scene scene;
     private LoadSceneMode mode;
 
     public PlayerController player;
     //public SpawnManager sm;
     public Canvas inventoryCanvas;
+    public Canvas pauseMenuCanvas;
     //public int spawnID;
 
     public List<NPCController> npcList;
     public List<Quest> questList;
-
-    public float sympMinDiff;
-    public float compMinDiff;
-    public float neutralMinDiff;
-    public float uncompMinDiff;
-    public float unsympMinDiff;
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-        
-    }
 
     private void Start()
     {
@@ -66,6 +53,10 @@ public class GameController : MonoBehaviour
             toggleInventory();
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            togglePauseMenu();
+        }
     }
 
     public void GetScene()
@@ -109,7 +100,7 @@ public class GameController : MonoBehaviour
         {            
             if(n.hasEmpathy == false)
             {
-                n.empathy.CalculateBaseEmpathy(player.personality, n.personality);
+                n.empathy.CalculateBaseEmpathy(agreeablenessWeight, conscientiousnessWeight, player.personality, n.personality);
                 n.hasEmpathy = true;
                 Debug.Log("NPC: " + n.gameObject.name + " Empatia: " + n.empathy.empathy);
             }
@@ -128,17 +119,29 @@ public class GameController : MonoBehaviour
         {
             inventoryCanvas.gameObject.SetActive(false);
         }
-
     }
 
-    private void OnEnable()
+    public void togglePauseMenu()
     {
-        
+        if (!pauseMenuCanvas.isActiveAndEnabled && !PixelCrushers.DialogueSystem.DialogueManager.IsConversationActive)
+        {
+            pauseMenuCanvas.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            pauseMenuCanvas.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     private void OnLevelWasLoaded(int level)
     {
-
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
         ClearNPCs();

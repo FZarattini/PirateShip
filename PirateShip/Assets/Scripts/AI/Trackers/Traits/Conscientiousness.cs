@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
 
-public class Conscientiousness : MonoBehaviour
+public class Conscientiousness : Trait
 {
     #region Singleton
     private static Conscientiousness _instance;
@@ -29,20 +29,16 @@ public class Conscientiousness : MonoBehaviour
     public int maxQuests;
     [SerializeField] int completedQuests = 0;
 
-    public float assignedValue;
-    public float assignedReverseValue;
-
-
-    // Start is called before the first frame update
-    void Start()
+    // Awake é chamada assim que todos os objetos são inicializados
+    protected override void Awake()
     {
-        onCompleteQuest += IncrementCompletedQuests;
+        _instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    protected override void Start()
     {
-        
+        onCompleteQuest += IncrementCompletedQuests;
     }
 
     public static void RegisterCompletedQuest()
@@ -55,8 +51,15 @@ public class Conscientiousness : MonoBehaviour
         completedQuests += 1;
     }
 
-    public float AssignConscientiousness()
+    /// <summary>
+    /// Calculates the Conscientiousness Personality Trait in the Big 5 Model
+    /// </summary>
+    /// <param name="trait"></param>
+    /// <param name="reversedTrait"></param>
+    /// <returns> The normalized score for the Conscientiousness personality trait </returns>
+    public override float CalculateTrait(string trait, string reversedTrait)
     {
+        // The Conscientiousness score is based on the amount of completed quests in relation to the total quests on the scene
         float questCompletionRate = completedQuests / maxQuests;
 
         if(questCompletionRate < 0.2)
@@ -78,17 +81,7 @@ public class Conscientiousness : MonoBehaviour
             assignedValue = 5;
         }
 
-        //Recupera a pontuação e a pontuação reversa
-        //assignedValue = DialogueLua.GetVariable("ConscientiousnessValue").AsFloat;
-        assignedReverseValue = 6 - DialogueLua.GetVariable("ConscientiousnessReversedValue").AsFloat;
-
-        //Média entre a pontuação e a pontuação reversa
-        float mean = (assignedValue + assignedReverseValue) / 2.0f;
-        //Normaliza o valor
-        float normalizedValue = (mean - 1) / 4.0f;
-
-        return normalizedValue;
-        //player.personality.personality[1] = normalizedValue;
+        return base.CalculateTrait(trait, reversedTrait);
     }
 
 }

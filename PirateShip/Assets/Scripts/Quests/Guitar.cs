@@ -12,7 +12,7 @@ public class Guitar : Quest
     public Usable npcUsable;
     public DoorTrigger dt;
 
-    private bool keyAdded;
+    private bool keyAdded = false;
 
     public override void Update()
     {
@@ -24,7 +24,8 @@ public class Guitar : Quest
             inventory.Remove(key);
         }
 
-        if(DialogueLua.GetVariable("GuitarQuestAccepted").AsBool == true && !inventory.items.Contains(key)){
+        //!inventory.items.Contains(key)
+        if (DialogueLua.GetVariable("GuitarQuestAccepted").AsBool == true && !keyAdded){
             accepted = true;
             dt.locked = false;
             keyAdded = inventory.Add(key);

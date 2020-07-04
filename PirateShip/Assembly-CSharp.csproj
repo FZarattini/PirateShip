@@ -62,18 +62,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AI\BeachSceneController.cs" />
+    <Compile Include="Assets\Scripts\AI\BoilerRoomSceneController.cs" />
     <Compile Include="Assets\Scripts\AI\Empathy.cs" />
     <Compile Include="Assets\Scripts\AI\Personality.cs" />
-    <Compile Include="Assets\Scripts\AI\PersonalityAssigner.cs" />
     <Compile Include="Assets\Scripts\AI\PersonalityDisplay.cs" />
-    <Compile Include="Assets\Scripts\AI\Tracker1SceneController.cs" />
-    <Compile Include="Assets\Scripts\AI\Tracker2SceneController.cs" />
+    <Compile Include="Assets\Scripts\AI\SceneController.cs" />
     <Compile Include="Assets\Scripts\AI\Trackers\Area.cs" />
     <Compile Include="Assets\Scripts\AI\Trackers\Traits\Agreeableness.cs" />
     <Compile Include="Assets\Scripts\AI\Trackers\Traits\Conscientiousness.cs" />
     <Compile Include="Assets\Scripts\AI\Trackers\Traits\Extraversion.cs" />
     <Compile Include="Assets\Scripts\AI\Trackers\Traits\Neuroticism.cs" />
     <Compile Include="Assets\Scripts\AI\Trackers\Traits\Openness.cs" />
+    <Compile Include="Assets\Scripts\AI\Trackers\Traits\Trait.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraBounds.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraSway.cs" />
     <Compile Include="Assets\Scripts\Camera\CutsceneCameraController.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\Event\EventTrigger.cs" />
+    <Compile Include="Assets\Scripts\Event\FadeController.cs" />
     <Compile Include="Assets\Scripts\Game\GameController.cs" />
     <Compile Include="Assets\Scripts\Game\GameStates.cs" />
     <Compile Include="Assets\Scripts\Interactables\Carriable.cs" />
@@ -118,7 +120,8 @@
     <Compile Include="Assets\Scripts\Quests\MainQuest_WitchPrank.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestSign\QuestSign.cs" />
-    <Compile Include="Assets\Scripts\SceneScripts\BoilerRoomSceneController.cs" />
+    <Compile Include="Assets\Scripts\SceneControllers\MineSceneController.cs" />
+    <Compile Include="Assets\Scripts\SceneControllers\OpeningTextSceneController.cs" />
     <Compile Include="Assets\Scripts\Sequencer\SequencerCommandPlayer.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Users/felip/Desktop/ICAD/PirateShip/PirateShip/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>

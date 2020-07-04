@@ -7,6 +7,7 @@ public class MainQuest_Bundles : Quest
 {
 
     public Item shinyBundle;
+    public MineSceneController msc;
 
     public override void Start()
     {
@@ -32,7 +33,7 @@ public class MainQuest_Bundles : Quest
 
         if (completed)
         {
-            LevelManager.changeScene("Tracker2");
+            msc.sceneCompleted = true;
         }
         base.Update();
     }

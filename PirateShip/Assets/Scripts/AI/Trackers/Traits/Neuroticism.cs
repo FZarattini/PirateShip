@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
 
-public class Neuroticism : MonoBehaviour
+public class Neuroticism : Trait
 {
        
     #region Singleton
@@ -24,33 +24,28 @@ public class Neuroticism : MonoBehaviour
 
     public PlayerController player;
 
-    public float assignedValue;
-    public float assignedReverseValue;
+    // Awake é chamada assim que todos os objetos são inicializados
+    protected override void Awake()
+    {
+        _instance = this;
+    }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Calculates the Neuroticism Personality Trait in the Big 5 Model
+    /// </summary>
+    /// <param name="trait"></param>
+    /// <param name="reversedTrait"></param>
+    /// <returns> The normalized score for the Neuroticism personality trait </returns>
+    public override float CalculateTrait(string trait, string reversedTrait)
     {
-    }
-
-    public float AssignNeuroticism()
-    {
-        
-        //Recupera a pontuação e a pontuação reversa
         assignedValue = DialogueLua.GetVariable("NeuroticismValue").AsFloat;
-        assignedReverseValue = 6 - DialogueLua.GetVariable("NeuroticismReversedValue").AsFloat;
 
-        //Média entre a pontuação e a pontuação reversa
-        float mean = (assignedValue + assignedReverseValue) / 2.0f;
-        //Normaliza o valor
-        float normalizedValue = (mean - 1) / 4.0f;
-
-        return normalizedValue;
-        //player.personality.personality[4] = normalizedValue;
+        return base.CalculateTrait(trait, reversedTrait);
     }
 }

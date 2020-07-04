@@ -1191,7 +1191,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SetContinueMode(true)
+        value: 
         type: 0
         typeString: 
       conversationID: 1
@@ -1227,7 +1227,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 294
-        y: 88
+        y: 89.49254
         width: 160
         height: 30
     - id: 1
@@ -1727,8 +1727,8 @@ MonoBehaviour:
         y: 556.28394
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 20.883842}
-    canvasZoom: 0.67000026
+    canvasScrollPosition: {x: 231.84232, y: 64.53796}
+    canvasZoom: 0.9100001
   - id: 2
     fields:
     - title: Title
@@ -9566,7 +9566,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["VillagerSonAccepted"] == true and (Variable["VillagerSonCompleted"]
-        == false) and (Variable["VillagerSonRejected"] == false)
+        == false) and (Variable["VillagerSonRejected"] == false) and (Variable["VillagerSonFailed"]
+        == false)
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -14268,8 +14269,8 @@ MonoBehaviour:
         y: 2563.1335
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.34000003
+    canvasScrollPosition: {x: 0, y: 1909.7783}
+    canvasZoom: 0.63999975
   - id: 14
     fields:
     - title: Title
@@ -16286,8 +16287,8 @@ MonoBehaviour:
         y: 251.38809
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.31000063
+    canvasScrollPosition: {x: 0, y: 424.89078}
+    canvasZoom: 0.7600007
   - id: 15
     fields:
     - title: Title
@@ -18979,8 +18980,8 @@ MonoBehaviour:
         y: 1850.5446
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.40000015
+    canvasScrollPosition: {x: 128.48642, y: 904.1731}
+    canvasZoom: 0.73
   - id: 16
     fields:
     - title: Title
@@ -21271,8 +21272,8 @@ MonoBehaviour:
         y: 98.05597
         width: 160
         height: 30
-    canvasScrollPosition: {x: 56.472477, y: 42.651268}
-    canvasZoom: 0.6099999
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.39999998
   - id: 17
     fields:
     - title: Title
@@ -23817,8 +23818,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 10.17646
-        y: 666.8392
+        x: 11.900597
+        y: 682.3563
         width: 160
         height: 30
     - id: 13
@@ -24668,8 +24669,8 @@ MonoBehaviour:
         y: 104.950806
         width: 160
         height: 30
-    canvasScrollPosition: {x: 301.2214, y: 561.9252}
-    canvasZoom: 0.8800006
+    canvasScrollPosition: {x: 0, y: 124.25566}
+    canvasZoom: 0.58000076
   - id: 23
     fields:
     - title: Title
@@ -31001,8 +31002,8 @@ MonoBehaviour:
         y: 1678.4856
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.22
+    canvasScrollPosition: {x: 0, y: 1020.66644}
+    canvasZoom: 0.75999975
   - id: 29
     fields:
     - title: Title
@@ -32488,7 +32489,7 @@ MonoBehaviour:
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.31000063
+    canvasZoom: 0.7000005
   syncInfo:
     syncActors: 0
     syncItems: 0

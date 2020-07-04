@@ -5,7 +5,7 @@ using UnityEngine;
 using PixelCrushers.DialogueSystem;
 
 /* Representa o traço Extraversion de personalidade no modelo Big 5 */
-public class Extraversion : MonoBehaviour
+public class Extraversion : Trait
 {
 
     // Singleton garante que uma instância da classe esteja presente a cada momento
@@ -37,18 +37,14 @@ public class Extraversion : MonoBehaviour
 
     [SerializeField] int interactedNPCs = 0;
 
-    // Valores que serão retirados dos diálogos do DialogueSystem
-    public float assignedValue;
-    public float assignedReverseValue;
-
     // Awake é chamada assim que todos os objetos são inicializados
-    private void Awake()
+    protected override void Awake()
     {
         _instance = this;
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         // Assina o método IncrementNPC ao evento onNPC - IncrementNPC será chamado toda vez que o evento for disparado
         onNPC += IncrementNPC;
@@ -66,14 +62,17 @@ public class Extraversion : MonoBehaviour
         interactedNPCs += 1;
     }
 
-    /* Calcula a pontuação numérica normalizada relativa ao traço de personalidade Extraversion
-     * Retorno: A pontuação normalizada (float)
-     */
-    public float AssignExtraversion()
+    /// <summary>
+    /// Calculates the Extraversion Personality Trait in the Big 5 Model
+    /// </summary>
+    /// <param name="trait"></param>
+    /// <param name="reversedTrait"></param>
+    /// <returns> The normalized score for the Extraversion personality trait </returns>
+    public override float CalculateTrait(string trait, string reversedTrait)
     {
+        // The Extraversion score is based on the amount of interacted NPCs in realation to the total NPCs in scene
         float npcInteractionRate = interactedNPCs / maxNPCs;
 
-        // Calcula a pontuação direta utilizando a razão de NPCs interagidos e o máximo de NPCs existentes na cena
         if (npcInteractionRate < 0.2)
         {
             assignedValue = 1;
@@ -95,17 +94,6 @@ public class Extraversion : MonoBehaviour
             assignedValue = 5;
         }
 
-        //Recupera a pontuação e a pontuação reversa
-        //assignedValue = DialogueLua.GetVariable("ExtraversionValue").AsFloat;
-        assignedReverseValue = 6 - DialogueLua.GetVariable("ExtraversionReversedValue").AsFloat;
-
-        //Média entre a pontuação e a pontuação reversa
-        float mean = (assignedValue + assignedReverseValue) / 2.0f;
-        //Normaliza o valor
-        float normalizedValue = (mean - 1) / 4.0f;
-
-
-        return normalizedValue;
-        //player.personality.personality[2] = normalizedValue;
+        return base.CalculateTrait(trait, reversedTrait);
     }
 }
