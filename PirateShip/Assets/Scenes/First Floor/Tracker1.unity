@@ -13439,6 +13439,7 @@ MonoBehaviour:
   displayCanvas: {fileID: 865912068}
   text: {fileID: 1465156526}
   canDisplay: 0
+  display: 0
 --- !u!114 &865912066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15662,7 +15663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ConfineMode: 0
   m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 1117804982}
+  m_BoundingShape2D: {fileID: 0}
   m_ConfineScreenEdges: 1
   m_Damping: 0
 --- !u!114 &1034358543

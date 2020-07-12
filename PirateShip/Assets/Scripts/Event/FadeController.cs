@@ -35,11 +35,11 @@ public class FadeController : MonoBehaviour
             toFade.color = new Color(toFade.color.r, toFade.color.g, toFade.color.b, i);
             yield return null;
         }
+        toFade.color = new Color(toFade.color.r, toFade.color.g, toFade.color.b, 1);
     }
 
     IEnumerator FadeOutImage(Image toFade)
     {
-        Debug.Log("ENTROU FADEOUT");
         for (float i = 1; i >= 0; i -= Time.deltaTime)
         {
             toFade.color = new Color(toFade.color.r, toFade.color.g, toFade.color.b, i);
@@ -47,7 +47,7 @@ public class FadeController : MonoBehaviour
         }
         if (deactivateCanvas)
         {
-            Debug.Log("DESATIVOU CANVAS");
+            toFade.color = new Color(toFade.color.r, toFade.color.g, toFade.color.b, 0);
             parent.SetActive(false);
         }
     }

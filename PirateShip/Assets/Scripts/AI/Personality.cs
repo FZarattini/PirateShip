@@ -81,6 +81,16 @@ public class Personality
     public void UpdatePersonality(int index, float value)
     {
         // Changes the specific trait value
-        this.personality[index] = value;
+        this.personality[index] += value;
+
+        if(this.personality[index] > 1.0f)
+        {
+            this.personality[index] = 1.0f;
+        }else if(this.personality[index] < 0f)
+        {
+            this.personality[index] = 0f;
+        }
+
+
     }
 }

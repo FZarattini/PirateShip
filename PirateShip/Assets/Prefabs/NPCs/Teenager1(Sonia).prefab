@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8511157364251691175}
   - component: {fileID: 8511157364251691176}
   m_Layer: 11
-  m_Name: Teenager1
+  m_Name: Teenager1(Sonia)
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,7 +245,6 @@ MonoBehaviour:
   - 1
   empathy: {fileID: 0}
   target: {fileID: 0}
-  essential: 0
   questGiver: 0
   questSign: {fileID: 0}
   interacted: 0

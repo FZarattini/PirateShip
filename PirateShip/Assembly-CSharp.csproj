@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\Level\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Level\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\Misc\DontDestroy.cs" />
+    <Compile Include="Assets\Scripts\Misc\PersonalityManipulator.cs" />
     <Compile Include="Assets\Scripts\Misc\TimelineManager.cs" />
     <Compile Include="Assets\Scripts\Misc\TransparencyController.cs" />
     <Compile Include="Assets\Scripts\NPC\AnimationParameterController.cs" />

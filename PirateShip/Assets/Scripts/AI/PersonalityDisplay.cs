@@ -11,6 +11,7 @@ public class PersonalityDisplay : MonoBehaviour
     public Text text;
     public bool canDisplay = false;
     private bool newScene = false;
+    public bool display = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,15 @@ public class PersonalityDisplay : MonoBehaviour
         if (player.hasPersonality)
         {
             text.text = "O: " + player.personality.personality[0] + " C: " + player.personality.personality[1] + " E: " + player.personality.personality[2] + " A: " + player.personality.personality[3] + " N: " + player.personality.personality[4];
+        }
+
+        if (display)
+        {
+            text.enabled = true;
+        }
+        else
+        {
+            text.enabled = false;
         }
     }
 }

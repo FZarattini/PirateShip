@@ -18,13 +18,25 @@ public class BoilerRoomSceneController : SceneController
     {
         fc.Fade(toFade, true);
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        Debug.Log("VAI INICIALIZAR NPCS!");
         gc.InitializeNPCs();
+        gc.InitializeNPCEmpathyDialogue();
     }
 
     // Update is called once per frame
     protected override void Update()
     {
+        if(DialogueLua.GetVariable("TacticalFade").AsBool == true)
+        {
+            StartCoroutine("TacticalFade");
+            DialogueLua.SetVariable("TacticalFade", false);
+        }
+    }
 
+    IEnumerator TacticalFade()
+    {
+        fc.Fade(toFade, true);
+        yield return new WaitForSeconds(4f);
+        fc.Fade(toFade, true);
+        yield return null;
     }
 }
